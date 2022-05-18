@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "D:\\DiscofferyFix\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "D:\\DiscofferyFix\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "D:\\DiscofferyFix\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_camera.xml",
+        "source": "D:\\DiscofferyFix\\app\\src\\main\\res\\layout\\activity_camera.xml"
+    },
+    {
+        "merged": "D:\\DiscofferyFix\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_camera_activty.xml",
+        "source": "D:\\DiscofferyFix\\app\\src\\main\\res\\layout\\activity_camera_activty.xml"
+    },
+    {
+        "merged": "D:\\DiscofferyFix\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_klasifikasi_activty.xml",
+        "source": "D:\\DiscofferyFix\\app\\src\\main\\res\\layout\\activity_klasifikasi_activty.xml"
+    }
+]
