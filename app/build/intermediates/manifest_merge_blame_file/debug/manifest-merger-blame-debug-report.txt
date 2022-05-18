@@ -1,0 +1,149 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.project.discoffery"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->D:\DiscofferyFix\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="32" />
+9-->D:\DiscofferyFix\app\src\main\AndroidManifest.xml
+10
+11    <meta-data
+11-->D:\DiscofferyFix\app\src\main\AndroidManifest.xml:5:5-7:51
+12        android:name="com.google.android.geo.API_KEY"
+12-->D:\DiscofferyFix\app\src\main\AndroidManifest.xml:6:9-54
+13        android:value="@string/google_maps_key" />
+13-->D:\DiscofferyFix\app\src\main\AndroidManifest.xml:7:9-48
+14
+15    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+15-->D:\DiscofferyFix\app\src\main\AndroidManifest.xml:9:5-79
+15-->D:\DiscofferyFix\app\src\main\AndroidManifest.xml:9:22-76
+16    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+16-->D:\DiscofferyFix\app\src\main\AndroidManifest.xml:10:5-81
+16-->D:\DiscofferyFix\app\src\main\AndroidManifest.xml:10:22-78
+17
+18    <!-- Include required permissions for Google Maps API to run. -->
+19    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+19-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Arya Enrico\.gradle\caches\transforms-3\9e94fbc1dfe7cc35df2fc7ea5e1cfb21\transformed\play-services-maps-18.0.2\AndroidManifest.xml:23:5-79
+19-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Arya Enrico\.gradle\caches\transforms-3\9e94fbc1dfe7cc35df2fc7ea5e1cfb21\transformed\play-services-maps-18.0.2\AndroidManifest.xml:23:22-76
+20    <uses-permission android:name="android.permission.INTERNET" />
+20-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Arya Enrico\.gradle\caches\transforms-3\9e94fbc1dfe7cc35df2fc7ea5e1cfb21\transformed\play-services-maps-18.0.2\AndroidManifest.xml:24:5-67
+20-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Arya Enrico\.gradle\caches\transforms-3\9e94fbc1dfe7cc35df2fc7ea5e1cfb21\transformed\play-services-maps-18.0.2\AndroidManifest.xml:24:22-64
+21
+22    <uses-feature
+22-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Arya Enrico\.gradle\caches\transforms-3\9e94fbc1dfe7cc35df2fc7ea5e1cfb21\transformed\play-services-maps-18.0.2\AndroidManifest.xml:26:5-28:35
+23        android:glEsVersion="0x00020000"
+23-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Arya Enrico\.gradle\caches\transforms-3\9e94fbc1dfe7cc35df2fc7ea5e1cfb21\transformed\play-services-maps-18.0.2\AndroidManifest.xml:27:9-41
+24        android:required="true" />
+24-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Arya Enrico\.gradle\caches\transforms-3\9e94fbc1dfe7cc35df2fc7ea5e1cfb21\transformed\play-services-maps-18.0.2\AndroidManifest.xml:28:9-32
+25
+26    <queries>
+26-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Arya Enrico\.gradle\caches\transforms-3\9e94fbc1dfe7cc35df2fc7ea5e1cfb21\transformed\play-services-maps-18.0.2\AndroidManifest.xml:30:5-34:15
+27
+28        <!-- Needs to be explicitly declared on Android R+ -->
+29        <package android:name="com.google.android.apps.maps" />
+29-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Arya Enrico\.gradle\caches\transforms-3\9e94fbc1dfe7cc35df2fc7ea5e1cfb21\transformed\play-services-maps-18.0.2\AndroidManifest.xml:33:9-64
+29-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Arya Enrico\.gradle\caches\transforms-3\9e94fbc1dfe7cc35df2fc7ea5e1cfb21\transformed\play-services-maps-18.0.2\AndroidManifest.xml:33:18-61
+30    </queries>
+31
+32    <application
+32-->D:\DiscofferyFix\app\src\main\AndroidManifest.xml:12:5-40:19
+33        android:allowBackup="true"
+33-->D:\DiscofferyFix\app\src\main\AndroidManifest.xml:13:9-35
+34        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+34-->[androidx.core:core:1.7.0] C:\Users\Arya Enrico\.gradle\caches\transforms-3\13ad83005e1ec5ad38a779722d41e4d8\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
+35        android:debuggable="true"
+36        android:icon="@mipmap/ic_launcher"
+36-->D:\DiscofferyFix\app\src\main\AndroidManifest.xml:14:9-43
+37        android:label="@string/app_name"
+37-->D:\DiscofferyFix\app\src\main\AndroidManifest.xml:15:9-41
+38        android:roundIcon="@mipmap/ic_launcher_round"
+38-->D:\DiscofferyFix\app\src\main\AndroidManifest.xml:16:9-54
+39        android:supportsRtl="true"
+39-->D:\DiscofferyFix\app\src\main\AndroidManifest.xml:17:9-35
+40        android:testOnly="true"
+41        android:theme="@style/Theme.Discoffery" >
+41-->D:\DiscofferyFix\app\src\main\AndroidManifest.xml:18:9-48
+42        <meta-data
+42-->D:\DiscofferyFix\app\src\main\AndroidManifest.xml:5:5-7:51
+43            android:name="com.google.android.geo.API_KEY"
+43-->D:\DiscofferyFix\app\src\main\AndroidManifest.xml:6:9-54
+44            android:value="@string/google_maps_key" />
+44-->D:\DiscofferyFix\app\src\main\AndroidManifest.xml:7:9-48
+45
+46        <activity
+46-->D:\DiscofferyFix\app\src\main\AndroidManifest.xml:25:9-34:20
+47            android:name="com.project.discoffery.MapsActivity"
+47-->D:\DiscofferyFix\app\src\main\AndroidManifest.xml:26:13-41
+48            android:exported="true"
+48-->D:\DiscofferyFix\app\src\main\AndroidManifest.xml:27:13-36
+49            android:label="@string/title_activity_maps" >
+49-->D:\DiscofferyFix\app\src\main\AndroidManifest.xml:28:13-56
+50            <intent-filter>
+50-->D:\DiscofferyFix\app\src\main\AndroidManifest.xml:29:13-33:29
+51                <action android:name="android.intent.action.MAIN" />
+51-->D:\DiscofferyFix\app\src\main\AndroidManifest.xml:30:17-69
+51-->D:\DiscofferyFix\app\src\main\AndroidManifest.xml:30:25-66
+52
+53                <category android:name="android.intent.category.LAUNCHER" />
+53-->D:\DiscofferyFix\app\src\main\AndroidManifest.xml:32:17-77
+53-->D:\DiscofferyFix\app\src\main\AndroidManifest.xml:32:27-74
+54            </intent-filter>
+55        </activity>
+56        <activity
+56-->D:\DiscofferyFix\app\src\main\AndroidManifest.xml:35:9-39:20
+57            android:name="com.project.discoffery.MainActivity"
+57-->D:\DiscofferyFix\app\src\main\AndroidManifest.xml:36:13-41
+58            android:exported="false" >
+58-->D:\DiscofferyFix\app\src\main\AndroidManifest.xml:37:13-37
+59        </activity>
+60        <!-- Needs to be explicitly declared on P+ -->
+61        <uses-library
+61-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Arya Enrico\.gradle\caches\transforms-3\9e94fbc1dfe7cc35df2fc7ea5e1cfb21\transformed\play-services-maps-18.0.2\AndroidManifest.xml:39:9-41:40
+62            android:name="org.apache.http.legacy"
+62-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Arya Enrico\.gradle\caches\transforms-3\9e94fbc1dfe7cc35df2fc7ea5e1cfb21\transformed\play-services-maps-18.0.2\AndroidManifest.xml:40:13-50
+63            android:required="false" />
+63-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Arya Enrico\.gradle\caches\transforms-3\9e94fbc1dfe7cc35df2fc7ea5e1cfb21\transformed\play-services-maps-18.0.2\AndroidManifest.xml:41:13-37
+64
+65        <activity
+65-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Arya Enrico\.gradle\caches\transforms-3\4735ad44076390720d1b0611cf097b5f\transformed\play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
+66            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+66-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Arya Enrico\.gradle\caches\transforms-3\4735ad44076390720d1b0611cf097b5f\transformed\play-services-base-18.0.1\AndroidManifest.xml:20:19-85
+67            android:exported="false"
+67-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Arya Enrico\.gradle\caches\transforms-3\4735ad44076390720d1b0611cf097b5f\transformed\play-services-base-18.0.1\AndroidManifest.xml:22:19-43
+68            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+68-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Arya Enrico\.gradle\caches\transforms-3\4735ad44076390720d1b0611cf097b5f\transformed\play-services-base-18.0.1\AndroidManifest.xml:21:19-78
+69
+70        <meta-data
+70-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\Arya Enrico\.gradle\caches\transforms-3\66f816f178a26dfc7044c30e9d9540cb\transformed\play-services-basement-18.0.0\AndroidManifest.xml:21:9-23:69
+71            android:name="com.google.android.gms.version"
+71-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\Arya Enrico\.gradle\caches\transforms-3\66f816f178a26dfc7044c30e9d9540cb\transformed\play-services-basement-18.0.0\AndroidManifest.xml:22:13-58
+72            android:value="@integer/google_play_services_version" />
+72-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\Arya Enrico\.gradle\caches\transforms-3\66f816f178a26dfc7044c30e9d9540cb\transformed\play-services-basement-18.0.0\AndroidManifest.xml:23:13-66
+73
+74        <provider
+74-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Arya Enrico\.gradle\caches\transforms-3\051dc7707264095d4ee72ba519a637c3\transformed\emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+75            android:name="androidx.startup.InitializationProvider"
+75-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Arya Enrico\.gradle\caches\transforms-3\051dc7707264095d4ee72ba519a637c3\transformed\emoji2-1.0.0\AndroidManifest.xml:27:13-67
+76            android:authorities="com.project.discoffery.androidx-startup"
+76-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Arya Enrico\.gradle\caches\transforms-3\051dc7707264095d4ee72ba519a637c3\transformed\emoji2-1.0.0\AndroidManifest.xml:28:13-68
+77            android:exported="false" >
+77-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Arya Enrico\.gradle\caches\transforms-3\051dc7707264095d4ee72ba519a637c3\transformed\emoji2-1.0.0\AndroidManifest.xml:29:13-37
+78            <meta-data
+78-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Arya Enrico\.gradle\caches\transforms-3\051dc7707264095d4ee72ba519a637c3\transformed\emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+79                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+79-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Arya Enrico\.gradle\caches\transforms-3\051dc7707264095d4ee72ba519a637c3\transformed\emoji2-1.0.0\AndroidManifest.xml:32:17-75
+80                android:value="androidx.startup" />
+80-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Arya Enrico\.gradle\caches\transforms-3\051dc7707264095d4ee72ba519a637c3\transformed\emoji2-1.0.0\AndroidManifest.xml:33:17-49
+81            <meta-data
+81-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Arya Enrico\.gradle\caches\transforms-3\2f67ed11091be72fc53dca94a26d366f\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+82                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+82-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Arya Enrico\.gradle\caches\transforms-3\2f67ed11091be72fc53dca94a26d366f\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+83                android:value="androidx.startup" />
+83-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Arya Enrico\.gradle\caches\transforms-3\2f67ed11091be72fc53dca94a26d366f\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+84        </provider>
+85    </application>
+86
+87</manifest>
