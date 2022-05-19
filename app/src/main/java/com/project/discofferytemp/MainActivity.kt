@@ -4,6 +4,7 @@ import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.BitmapFactory
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -59,6 +60,10 @@ class MainActivity : AppCompatActivity() {
         binding.btnMove.setOnClickListener {
             startCameraX()
         }
+        binding.btnMAP.setOnClickListener {
+            val intent  = Intent(this@MainActivity,MapsActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 
@@ -72,9 +77,22 @@ class MainActivity : AppCompatActivity() {
         if (it.resultCode == CAMERA_X_RESULT) {
             val myFile = it.data?.getSerializableExtra("picture") as File
             val isBackCamera = it.data?.getBooleanExtra("isBackCamera", true) as Boolean
-            val result = BitmapFactory.decodeFile(myFile.path)
 
-            binding.previewImageView.setImageBitmap(result)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R){
+                val result = rotateBitmap(
+                    BitmapFactory.decodeFile(myFile.path),
+                    isBackCamera
+                )
+                binding.previewImageView.setImageBitmap(result)
+            }else{
+                val result = BitmapFactory.decodeFile(myFile.path)
+                binding.previewImageView.setImageBitmap(result)
+            }
+
+
+
+
+
         }
     }
 }
