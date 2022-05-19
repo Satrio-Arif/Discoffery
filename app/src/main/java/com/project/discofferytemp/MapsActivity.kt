@@ -7,6 +7,7 @@ import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Looper
+import android.view.View
 import android.widget.Toast
 import androidx.activity.result.IntentSenderRequest
 import androidx.activity.result.contract.ActivityResultContracts
@@ -50,7 +51,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
 
-
     override fun onDestroy() {
         super.onDestroy()
         stopLocationUpdates()
@@ -63,20 +63,30 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
+
         getMyLastLocation()
         createLocationRequest()
         createLocationCallback()
+        //startLocationUpdates()
+
+        binding.btnStart.visibility = View.GONE
+
+
+       // binding.btnStart.visibility = View.VISIBLE
 
         updateText(this.flag)
 
         binding.btnStart.setOnClickListener {
             if (this.flag){
-                startLocationUpdates()
-                showStartMarker(LatLng(this.latitude.toDouble(),this.longitude.toDouble()))
-                Thread.sleep(200)
-                stopLocationUpdates()
+
+                if (this.latitude != 0.0F){
+                    showStartMarker(LatLng(this.latitude.toDouble(),this.longitude.toDouble()))
+                }
+
                 this.flag =false
                 updateText(false)
+                stopLocationUpdates()
+
             } else{
                 showToast("Fitur belum tersedia")
             }
@@ -85,11 +95,16 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
     private fun createLocationCallback() {
+        if (latitude != 0.0f){
+            binding.btnStart.visibility = View.VISIBLE
+        }
         locationCallback = object : LocationCallback(){
             override fun onLocationResult(location: LocationResult) {
                 super.onLocationResult(location)
+
                 latitude  = location.lastLocation.latitude.toFloat()
                 longitude = location.lastLocation.longitude.toFloat()
+
             }
         }
 
@@ -100,8 +115,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             interval    = TimeUnit.SECONDS.toMillis(1)
             maxWaitTime = TimeUnit.SECONDS.toMillis(1)
             priority = LocationRequest.PRIORITY_HIGH_ACCURACY
-
-
         }
         val builder = LocationSettingsRequest.Builder()
             .addLocationRequest(locationRequest)
@@ -115,6 +128,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             .addOnFailureListener{ex->
                 if (ex is ResolvableApiException){
                     try {
+
                         resolutionLauncher.launch(
                             IntentSenderRequest.Builder(ex.resolution).build()
                         )
@@ -211,6 +225,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             when (result.resultCode) {
                 RESULT_OK ->{
                     startLocationUpdates()
+                    Thread.sleep(3000)
+                    binding.btnStart.visibility =View.VISIBLE
+
                 }
 
                 RESULT_CANCELED ->
