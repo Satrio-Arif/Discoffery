@@ -70,10 +70,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun startCameraX() {
         val intent = Intent(this, CameraActivity::class.java)
-        launchCamera.launch(intent)
+        launchCamera1.launch(intent)
     }
 
-    private val launchCamera = registerForActivityResult(
+    private val launchCamera1 = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) {
         if (it.resultCode == CAMERA_X_RESULT) {
