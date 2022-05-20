@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
             if (!allPermissionsGranted()) {
                 Toast.makeText(
                     this,
-                    "Tidak mendapatkan permission.",
+                    "Tidak Mendapatkan Izin.",
                     Toast.LENGTH_SHORT
                 ).show()
                 finish()
@@ -88,10 +88,6 @@ class MainActivity : AppCompatActivity() {
                 val result = BitmapFactory.decodeFile(myFile.path)
                 binding.previewImageView.setImageBitmap(result)
             }
-
-
-
-
 
         }
     }
