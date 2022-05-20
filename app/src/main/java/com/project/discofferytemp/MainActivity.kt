@@ -23,6 +23,11 @@ class MainActivity : AppCompatActivity() {
         private const val REQUEST_CODE_PERMISSIONS = 10
     }
 
+
+    private fun allPermissionsGranted() = REQUIRED_PERMISSIONS.all {
+        ContextCompat.checkSelfPermission(baseContext, it) == PackageManager.PERMISSION_GRANTED
+    }
+
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<String>,
@@ -41,13 +46,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun allPermissionsGranted() = REQUIRED_PERMISSIONS.all {
-        ContextCompat.checkSelfPermission(baseContext, it) == PackageManager.PERMISSION_GRANTED
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding= ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         if (!allPermissionsGranted()) {
@@ -61,7 +62,7 @@ class MainActivity : AppCompatActivity() {
             startCameraX()
         }
         binding.btnMAP.setOnClickListener {
-            val intent  = Intent(this@MainActivity,MapsActivity::class.java)
+            val intent = Intent(this@MainActivity, MapsActivity::class.java)
             startActivity(intent)
         }
 
@@ -69,22 +70,23 @@ class MainActivity : AppCompatActivity() {
 
     private fun startCameraX() {
         val intent = Intent(this, CameraActivity::class.java)
-        launcherIntentCameraX.launch(intent)
+        launchCamera.launch(intent)
     }
-    private val launcherIntentCameraX = registerForActivityResult(
+
+    private val launchCamera = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) {
         if (it.resultCode == CAMERA_X_RESULT) {
             val myFile = it.data?.getSerializableExtra("picture") as File
             val isBackCamera = it.data?.getBooleanExtra("isBackCamera", true) as Boolean
 
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R){
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
                 val result = rotateBitmap(
                     BitmapFactory.decodeFile(myFile.path),
                     isBackCamera
                 )
                 binding.previewImageView.setImageBitmap(result)
-            }else{
+            } else {
                 val result = BitmapFactory.decodeFile(myFile.path)
                 binding.previewImageView.setImageBitmap(result)
             }
