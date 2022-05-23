@@ -34,7 +34,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     private var latitude  =0.0F
     private var longitude =0.0F
     private  var flag:Boolean =false
-    private var position=0;
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
