@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1039625879825",
+    "project_id": "discofferyfix",
+    "storage_bucket": "discofferyfix.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1039625879825:android:4109eeb973e94fbc498cb0",
+        "android_client_info": {
+          "package_name": "com.project.discofferytemp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1039625879825-b79cc542lh2618760p97iqr7dj7l422p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.project.discofferytemp",
+            "certificate_hash": "58c4cb20f1004862ce5ca6e57700de4ba1dd1236"
+          }
+        },
+        {
+          "client_id": "1039625879825-cu8i5dbo5s7in6jbsvgc157oi63dd964.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtfpGlIf9azBcwYklXsDyqAImVfq1gfIg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1039625879825-cu8i5dbo5s7in6jbsvgc157oi63dd964.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
