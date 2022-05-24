@@ -3,6 +3,13 @@
     <string name="title_activity_maps">MapsActivity</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ss">SS</string>
+    <string name="next">Next</string>
+    <string name="lorem_ipsum_dolor_sit_amet_consectetur_adipiscin_adipiscing_elit">Lorem ipsum dolor sit amet, consectetur adipiscin adipiscing elit.</string>
+    <string name="username">Username</string>
+    <string name="input_your_username">Input Your Username</string>
+    <string name="password">Password</string>
+    <string name="lojin">Login</string>
 
     <string-array name="judul">
         <item>Salah seorang ulama dan khatib terkemuka di Masjid Besar Kasultanan Yogyakarta pada masa itu, dan ibu dari K.H. Ahmad Dahlan adalah puteri dari H. Ibrahim yang juga menjabat penghulu Kesultanan Ngayogyakarta Hadiningrat pada masa itu. KH. Ahmad Dahlan telah mempelopori kebangkitan ummat Islam untuk menyadari nasibnya sebagai bangsa terjajah yang masih harus belajar dan berbuat. </item>

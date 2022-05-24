@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.project.discofferytemp">
+    package="com.project.discofferytemp" >
 
     <uses-feature android:name="android.hardware.camera" />
 
@@ -15,14 +15,23 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.DiscofferyTemp">
+        android:theme="@style/Theme.DiscofferyTemp" >
+        <activity
+            android:name=".item_onboarding"
+            android:exported="false" />
+        <activity
+            android:name=".OnboardingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ButtomNavigation"
+            android:exported="false" />
         <activity
             android:name=".ScanPhoto"
             android:exported="false" />
         <activity
-            android:name=".ButtomNavigation"
+            android:name=".SplashScreen"
             android:exported="true"
-            android:theme="@style/Theme.Fab_Bottom_app_bar">
+            android:theme="@style/Theme.Fab_Bottom_app_bar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -59,7 +68,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
     </application>
 
 </manifest>
