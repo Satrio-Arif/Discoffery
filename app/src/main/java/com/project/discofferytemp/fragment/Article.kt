@@ -34,7 +34,7 @@ class Article : Fragment() {
 
     private fun showData(value:ArrayList<Articles>){
         binding.rvArticles.layoutManager =LinearLayoutManager(activity)
-        val adapter =ArticleAdapter()
+        val adapter =ArticleAdapter(requireActivity())
         adapter.setData(value)
         binding.rvArticles.adapter =adapter
     }

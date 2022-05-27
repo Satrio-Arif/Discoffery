@@ -10,6 +10,15 @@
     <string name="input_your_username">Input Your Username</string>
     <string name="password">Password</string>
     <string name="lojin">Login</string>
+    <string name="judul_Artikel">Bahaya Meminum Kopi Terlalu Banyak </string>
+    <string name="cari_Kopi">Mau kopi ini? Yuk cari di sekitarmu</string>
+    <string name="isi_artikel"> PURE  NATURAL COFFEE
+    Since 1963, we have scoured the world for the best coffee available anywhere and we expertly roast our beans in small batches for optimal flavor. We purchase our beans direct from coffee farmers building on decades-long relationships to ensure we get the top 1% of the best arabica beans in the world. So, we know where every coffee bean comes from. Now the same great coffee we use in our store locations are available in retail packages. Buy coffee online here.
+    A S K COFFEE BEANS® brand’s high standards make our coffee uniquely and uniformly delicious no matter which location you visit, anywhere in the world. Our Master Roaster has employed state of the art coffee roasting techniques and expert instincts to preserve the beloved ritual of coffee drinking. You can enjoy our renowned coffees at home, school, the office or wherever travels take you. When you buy coffee online, choose from whole coffee beans, ground coffee, organic coffee, single origin coffee, flavored and special reserved coffees with a variety of roasts. And for those times you need good coffee quickly, check out our single serving coffee products too.</string>
+
+
+<string name="about"> Gayo coffee (English: Gayo coffee) is an arabica coffee variety which is one of the leading commodities originating from the Gayo Highlands, Central Aceh, Indonesia.</string>
+
 
     <string-array name="judul">
         <item>Salah seorang ulama dan khatib terkemuka di Masjid Besar Kasultanan Yogyakarta pada masa itu, dan ibu dari K.H. Ahmad Dahlan adalah puteri dari H. Ibrahim yang juga menjabat penghulu Kesultanan Ngayogyakarta Hadiningrat pada masa itu. KH. Ahmad Dahlan telah mempelopori kebangkitan ummat Islam untuk menyadari nasibnya sebagai bangsa terjajah yang masih harus belajar dan berbuat. </item>
@@ -22,17 +31,12 @@
         <item>Dr.(H.C.) Ir. H. Soekarno (ER, EYD: Sukarno, nama lahir: Koesno Sosrodihardjo) (lahir di Surabaya, Jawa Timur, 6 Juni 1901 – meninggal di Jakarta, 21 Juni 1970 pada umur 69 tahun) adalah Presiden pertama Republik Indonesia yang menjabat pada periode 1945–1967. Ia memainkan peranan penting dalam memerdekakan bangsa Indonesia dari penjajahan Belanda. Ia adalah Proklamator Kemerdekaan Indonesia (bersama dengan Mohammad Hatta) yang terjadi pada tanggal 17 Agustus 1945. Soekarno adalah yang pertama kali mencetuskan konsep mengenai Pancasila sebagai dasar negara Indonesia dan ia sendiri yang menamainya.</item>
         <item>Prof. Mr. Dr. Soepomo (Ejaan Soewandi: Supomo; lahir di Sukoharjo, Jawa Tengah, 22 Januari 1903 – meninggal di Jakarta, 12 September 1958 pada umur 55 tahun) adalah seorang pahlawan nasional Indonesia. Soepomo dikenal sebagai arsitek Undang-undang Dasar 1945, bersama dengan Muhammad Yamin dan Soekarno.</item>
     </string-array>
+    <string name="informasi_kopi">Informasi: kopi aceh gayo</string>
+    <string name="banner_kopi">banner kopi</string>
+
 
     <integer-array name="data_photo">
         <item>@drawable/kopi_article</item>
-        <item>@drawable/kopi_article</item>
-        <item>@drawable/kopi_article</item>
-        <item>@drawable/kopi_article</item>
-        <item>@drawable/kopi_article</item>
-        <item>@drawable/kopi_article</item>
-        <item>@drawable/kopi_article</item>
-        <item>@drawable/kopi_article</item>
-        <item>@drawable/kopi_article</item>
-
     </integer-array>
+
 </resources>
