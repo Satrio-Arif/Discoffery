@@ -22,7 +22,7 @@ class Home : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val home:TextView =view.findViewById(R.id.homeFragment)
+       // val home:TextView =view.findViewById(R.id.homeFragment)
     }
 
 
