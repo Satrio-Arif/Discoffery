@@ -10,6 +10,9 @@
     <string name="input_your_username">Input Your Username</string>
     <string name="password">Password</string>
     <string name="lojin">Login</string>
+    <string name="aceh_gayo">Confidence Aceh Gayo : %s %s</string>
+    <string name="dampit">Confidence Dampit : %s %s</string>
+    <string name="toraja">Confidence toraja : %s %s</string>
     <string name="judul_Artikel">Bahaya Meminum Kopi Terlalu Banyak </string>
     <string name="cari_Kopi">Mau kopi ini? Yuk cari di sekitarmu</string>
     <string name="isi_artikel"> PURE  NATURAL COFFEE
