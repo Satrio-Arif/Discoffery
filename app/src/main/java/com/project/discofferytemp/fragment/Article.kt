@@ -45,7 +45,7 @@ class Article : Fragment() {
         val sumberData ="discoffery"
         val uri =resources.obtainTypedArray(R.array.data_photo).getResourceId(0,-1)
         val dataJudul =resources.getStringArray(R.array.judul)
-        for (i in 0..4){
+        for (i in 0..8){
             val article =Articles(sumber = sumberData,img = uri,judul =dataJudul[i],createdAt = "25-05-2022" )
           tempData.add(article)
         }

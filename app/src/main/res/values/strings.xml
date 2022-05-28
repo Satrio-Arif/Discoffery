@@ -33,6 +33,19 @@
     </string-array>
     <string name="informasi_kopi">Informasi: kopi aceh gayo</string>
     <string name="banner_kopi">banner kopi</string>
+    <string name="title">Bahaya Meminum Kopi Terlalu Banyak</string>
+    <string name="sindo_news">Sindo News</string>
+    <string name="_2022_05_12">2022 – 05 - 12</string>
+    <string name="jakarta_terancam_banjir_pada_tahun_2033">Jakarta Terancam Banjir Pada tahun 2033</string>
+    <string name="just_for_you">JUST FOR YOU</string>
+    <string name="read">Read</string>
+    <string name="sed_vel_turpis_adipiscing_penatibus_orci_neque_erat_sed_fermentum_ipsum_vel_quis_quam_nunc_etiam_dui_tortor_non_in_aliquam_lacinia_tempor">Sed vel turpis adipiscing penatibus orci neque. Erat sed fermentum ipsum vel quis quam. Nunc etiam dui tortor, non in aliquam lacinia tempor.</string>
+    <string name="articles">Articles</string>
+    <string name="buy_this_coffee">Buy This Coffee</string>
+    <string name="bahaya_terlalu_sering_meminum_kopi_lorem_ipsum_dolor_sit_amet_consectetur_adipiscing_elit_nulla_nec_lectus_a_dui_malesuada_condimentum_pellentesque_ac_metus_at_ipsum_facilisis_accumsan_congue_in_lorem_proin_et_euismod_nisl_sed_orci_enim_dapibus_eget_metus_i">Bahaya Terlalu Sering Meminum Kopi Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec lectus a dui malesuada condimentum. Pellentesque ac metus at ipsum facilisis accumsan congue in lorem. Proin et euismod nisl. Sed orci enim, dapibus eget metus i</string>
+    <string name="melancarkan_darah">- Melancarkan Darah</string>
+    <string name="coffee_information">Coffee Information</string>
+    <string name="about_coffee">About Coffee</string>
 
 
     <integer-array name="data_photo">
