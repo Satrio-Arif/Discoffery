@@ -8,14 +8,17 @@ data class Results(
     @field:SerializedName("photos")
     var photos: List<Photos> = mutableListOf(Photos()),
     var id:String ="",
+    @field:SerializedName("place_id")
     var place_id:String = "",
     var price_level:Int =0,
-    var rating:Double =0.0,
+    @field:SerializedName("rating")
+    var rating:Float =0.0F,
     var reference:String ="",
     var scope:String ="",
     var type:List<String> = mutableListOf(""),
     var vincity:String ="",
     var opening_hours:OpeningHours =OpeningHours(),
+    @field:SerializedName("name")
     var name:String ="",
     var icon:String ="",
     var addres_component:List<AddressComponent> = mutableListOf(AddressComponent()),

@@ -10,8 +10,16 @@
         <entry key="..\:/DiscofferyTemp/app/src/main/res/layout/activity_detail_kopi2.xml" value="0.1" />
         <entry key="..\:/DiscofferyTemp/app/src/main/res/layout/activity_detail_kopi_article.xml" value="0.3625" />
         <entry key="..\:/DiscofferyTemp/app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="..\:/DiscofferyTemp/app/src/main/res/layout/activity_maps.xml" value="0.1" />
+        <entry key="..\:/DiscofferyTemp/app/src/main/res/layout/activity_maps.xml" value="0.22" />
+        <entry key="..\:/DiscofferyTemp/app/src/main/res/layout/activity_onboarding.xml" value="0.27853260869565216" />
+        <entry key="..\:/DiscofferyTemp/app/src/main/res/layout/activity_register.xml" value="0.27853260869565216" />
+        <entry key="..\:/DiscofferyTemp/app/src/main/res/layout/activity_scan_photo.xml" value="0.1762917933130699" />
+        <entry key="..\:/DiscofferyTemp/app/src/main/res/layout/activity_splash_screen.xml" value="0.27853260869565216" />
         <entry key="..\:/DiscofferyTemp/app/src/main/res/layout/activity_view_place.xml" value="0.1" />
+        <entry key="..\:/DiscofferyTemp/app/src/main/res/layout/fragment_article.xml" value="0.1762917933130699" />
+        <entry key="..\:/DiscofferyTemp/app/src/main/res/layout/item_maps.xml" value="0.22" />
+        <entry key="..\:/DiscofferyTemp/app/src/main/res/layout/item_onboarding.xml" value="0.27853260869565216" />
+        <entry key="..\:/DiscofferyTemp/app/src/main/res/layout/utem_article.xml" value="0.33" />
         <entry key="..\:/Users/phaks/AndroidStudioProjects/Discoffery/app/src/main/res/drawable/button_shape.xml" value="0.109" />
         <entry key="..\:/Users/phaks/AndroidStudioProjects/Discoffery/app/src/main/res/drawable/ic_baseline_attach_money.xml" value="0.109" />
         <entry key="..\:/Users/phaks/AndroidStudioProjects/Discoffery/app/src/main/res/drawable/shape_button.xml" value="0.109" />

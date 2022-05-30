@@ -11,7 +11,8 @@ import com.project.discofferytemp.model.Articles
 
 class ArticleAdapter(val context: Context):RecyclerView.Adapter<ArticleAdapter.ArticleHolder>() {
     private var dataArticle =ArrayList<Articles>()
-     fun setData(param:ArrayList<Articles>){
+
+    fun setData(param:ArrayList<Articles>){
          this.dataArticle.clear()
          this.dataArticle.addAll(param)
          notifyDataSetChanged()

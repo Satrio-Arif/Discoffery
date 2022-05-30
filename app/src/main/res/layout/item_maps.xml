@@ -12,7 +12,7 @@
     android:background="@drawable/card">
 
     <ImageView
-        android:id="@+id/imgItemPhoto"
+        android:id="@+id/photoToko"
         android:layout_width="@dimen/_90sdp"
         android:layout_height="@dimen/_90sdp"
         android:src="@drawable/kopi_article"
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvJudulArtikel"
+        android:id="@+id/namaToko"
         android:layout_width="230dp"
         android:layout_height="50dp"
         android:layout_marginEnd="20dp"
@@ -32,39 +32,22 @@
         android:text="@string/jakarta_terancam_banjir_pada_tahun_2033"
         android:textColor="@color/black"
         android:textSize="@dimen/_10sdp"
-        app:layout_constraintEnd_toStartOf="@+id/imgItemPhoto"
+        app:layout_constraintEnd_toStartOf="@+id/photoToko"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvItemSource"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:drawableStart="@drawable/kopi_article_news"
-        android:drawablePadding="@dimen/_8sdp"
-        android:fontFamily="@font/poppins"
-        android:text="@string/sindo_news"
-        android:textSize="11sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="@+id/tvJudulArtikel" />
-
-
-    <TextView
-        android:id="@+id/tvItemCreatedAt"
+    <RatingBar
+        android:id="@+id/ratingToko"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:drawablePadding="@dimen/_8sdp"
-        android:fontFamily="@font/poppins"
-        android:text="@string/_2022_05_12"
-        android:textSize="11sp"
-        android:layout_marginEnd="20dp"
+        android:max="5"
+        android:isIndicator="true"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imgItemPhoto"
-        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@+id/namaToko" />
 
- />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
