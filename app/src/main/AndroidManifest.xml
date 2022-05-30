@@ -17,6 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DiscofferyTemp">
         <activity
+            android:name=".ViewPlace"
+            android:exported="false" />
+        <activity
             android:name=".DetailKopi"
             android:exported="false" />
         <activity

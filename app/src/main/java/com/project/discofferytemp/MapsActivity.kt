@@ -1,12 +1,16 @@
 package com.project.discofferytemp
 
 import android.Manifest
+import android.content.Intent
 import android.content.IntentSender
 import android.content.pm.PackageManager
+import android.graphics.BitmapFactory
 import android.location.Location
+import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Looper
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.result.IntentSenderRequest
@@ -18,9 +22,17 @@ import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.project.discofferytemp.api.ApiService
 import com.project.discofferytemp.databinding.ActivityMapsBinding
+import com.project.discofferytemp.helper.GoogleMaps
+import com.project.discofferytemp.model.Place
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import java.lang.StringBuilder
 import java.util.concurrent.TimeUnit
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
@@ -31,9 +43,13 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var locationRequest: LocationRequest
     private lateinit var locationCallback: LocationCallback
     private lateinit var fusedLocationClient: FusedLocationProviderClient
-    private var latitude  =0.0F
-    private var longitude =0.0F
+    private var latitude:Double  =0.0
+    private var longitude:Double =0.0
     private  var flag:Boolean =false
+    private lateinit var lastLocation:Location
+    private lateinit var nearetsStore:ApiService
+    private lateinit var coffeStore:Place
+    //private var marker:Marker?  null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,8 +57,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         binding = ActivityMapsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.hide()
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+        nearetsStore =GoogleMaps.network
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
@@ -61,6 +79,13 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         stopLocationUpdates()
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        if (this.flag){
+            binding.btnStart.visibility = View.VISIBLE
+        }
+    }
+
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
 
@@ -69,42 +94,88 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         createLocationCallback()
         //startLocationUpdates()
 
-        binding.btnStart.visibility = View.GONE
-
+        if (this.flag== false){
+            binding.btnStart.visibility = View.GONE
+        }else{
+            binding.btnStart.visibility = View.VISIBLE
+        }
 
        // binding.btnStart.visibility = View.VISIBLE
-
         updateText(this.flag)
 
         binding.btnStart.setOnClickListener {
             if (this.flag){
-
-                if (this.latitude != 0.0F){
-                    showStartMarker(LatLng(this.latitude.toDouble(),this.longitude.toDouble()))
+                if (this.latitude != 0.0){
+                    showStartMarker(this.latitude,this.longitude)
                 }
-
                 this.flag =false
                 updateText(false)
                 stopLocationUpdates()
-
             } else{
-                showToast("Fitur belum tersedia")
+                nearestStore("coffee")
             }
+        }
+
+        mMap.setOnMarkerClickListener { marker->
+            GoogleMaps.currentResult =coffeStore.result[Integer.parseInt(marker.snippet?:"0")]
+            startActivity(Intent(this,ViewPlace::class.java))
+            true
         }
 
     }
 
+    private fun nearestStore(param: String) {
+        val url =geturl(this.latitude,this.longitude,param)
+        nearetsStore.getNearestStore(url).enqueue(object: Callback<Place>{
+            override fun onResponse(call: Call<Place>, response: Response<Place>) {
+
+            if (response.isSuccessful){
+                coffeStore = response.body()!!
+
+                for (i in 0 until response.body()!!.result.size){
+                    val googleplace =response.body()?.result
+                    val lat = googleplace?.get(i)?.geometri?.location?.lat
+                    val lng = googleplace?.get(i)?.geometri?.location?.lng
+                    val placename =googleplace?.get(i)?.name
+                    val parmlatLng =LatLng(lat?:-6.202436299999999,lng?:106.6527099)
+
+                    showStartMarker(parmlatLng,placename?:"",i.toString())
+                }
+            }
+            }
+
+            override fun onFailure(call: Call<Place>, t: Throwable) {
+               Toast.makeText(this@MapsActivity,t.message,Toast.LENGTH_SHORT).show()
+            }
+
+        })
+    }
+
+    private fun geturl(paramlatitude: Double, paramlongitude: Double, param: String): String {
+        val googlePlaceUrl = StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json")
+        googlePlaceUrl.append("?location=${paramlatitude},${paramlongitude}")
+        googlePlaceUrl.append("&radius=3500")
+        googlePlaceUrl.append("&type=$param")
+        googlePlaceUrl.append("&key=AIzaSyBEnAC2oDIfNxqS9vtgB6Bx0-XEM9GY2bY")
+        Log.d("MAP", "geturl:"+googlePlaceUrl.toString())
+        return googlePlaceUrl.toString()
+    }
+
     private fun createLocationCallback() {
-        if (latitude != 0.0f){
-            binding.btnStart.visibility = View.VISIBLE
-        }
+//        if (latitude != 0.0){
+//            binding.btnStart.visibility = View.VISIBLE
+//        }
         locationCallback = object : LocationCallback(){
             override fun onLocationResult(location: LocationResult) {
                 super.onLocationResult(location)
 
-                latitude  = location.lastLocation.latitude.toFloat()
-                longitude = location.lastLocation.longitude.toFloat()
+                latitude  = location.lastLocation.latitude
+                longitude = location.lastLocation.longitude
+                lastLocation =location.lastLocation
 
+//                if (marker != null){
+//                    marker?.remove()
+//                }
             }
         }
 
@@ -147,10 +218,13 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 permissions[Manifest.permission.ACCESS_FINE_LOCATION] ?: false -> {
                     // Precise location access granted.
                     getMyLastLocation()
+
+
                 }
                 permissions[Manifest.permission.ACCESS_COARSE_LOCATION] ?: false -> {
                     // Only approximate location access granted.
                     getMyLastLocation()
+
                 }
                 else -> {
 
@@ -169,16 +243,19 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             checkPermission(Manifest.permission.ACCESS_COARSE_LOCATION)){
             fusedLocationClient.lastLocation.addOnSuccessListener { location: Location? ->
                 if (location != null) {
-                    showStartMarker(location)
-                    this.latitude  = location.latitude.toFloat()
-                    this.longitude = location.longitude.toFloat()
+
+                    this.latitude  = location.latitude
+                    this.longitude = location.longitude
+                    showStartMarker(this.latitude,this.longitude)
+                    this.flag =false
+                    updateText(false)
+                    binding.btnStart.visibility = View.VISIBLE
 
 
                 } else {
                     showToast("Location not found ")
                     this.flag = true
                     updateText(this.flag)
-
                 }
             }
 
@@ -192,24 +269,28 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         }
     }
 
-    private fun showStartMarker(location: Location) {
-        val startLocation = LatLng(location.latitude, location.longitude)
+    private fun showStartMarker(lat:Double,long:Double) {
+        val startLocation = LatLng(lat, long)
         mMap.addMarker(
             MarkerOptions()
                 .position(startLocation)
                 .title("Posisi Saat Ini")
+
         )
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(startLocation, 17f))
     }
-    private fun showStartMarker(latLng: LatLng) {
-        val startLocation = latLng
+    private fun showStartMarker(latLng: LatLng,paramTitle:String ="Posisi Saat ini",paramSnippet:String) {
+        //val startLocation = latLng
         mMap.addMarker(
             MarkerOptions()
-                .position(startLocation)
-                .title("Posisi Saat Ini")
+                .position(latLng)
+                .title(paramTitle)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                .snippet(paramSnippet)
         )
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(startLocation, 17f))
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 11f))
     }
+
     private fun showToast(pesan:String){
         Toast.makeText(
             this@MapsActivity,
@@ -255,7 +336,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     }
     private fun updateText(param:Boolean){
         if (param){
-
             binding.btnStart.setText("Dapatkan lokasi saat ini")
         }else{
 
@@ -263,4 +343,5 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         }
 
     }
+
 }
