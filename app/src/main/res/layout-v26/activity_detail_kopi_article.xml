@@ -57,6 +57,7 @@
             android:fontFamily="@font/poppins_light"
             android:textColor="@color/black"
             android:layout_gravity="center_vertical|end"
+            android:justificationMode="inter_word"
             android:layout_marginStart="30dp"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="@dimen/_24sdp"
