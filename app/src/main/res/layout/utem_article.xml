@@ -47,6 +47,7 @@
         android:text="@string/sindo_news"
         android:textSize="11sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@+id/tvJudulArtikel" />
 
 
@@ -64,6 +65,7 @@
         android:textSize="11sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imgItemPhoto"
+        android:textColor="@color/black"
 
         app:layout_constraintTop_toTopOf="@+id/tvItemSource" />
 
