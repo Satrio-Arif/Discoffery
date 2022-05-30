@@ -46,6 +46,18 @@
     <string name="melancarkan_darah">- Melancarkan Darah</string>
     <string name="coffee_information">Coffee Information</string>
     <string name="about_coffee">About Coffee</string>
+    <string name="price_fragment">PRICE FRAGMENT</string>
+    <string name="arabica">Arabica</string>
+    <string name="aceh_indonesia">Aceh, Indonesia</string>
+    <string name="rp_15_000_rp_20_000">Rp. 15.000 - Rp. 20.000</string>
+    <string name="welcome">Welcome,</string>
+    <string name="discoffery">Discoffery</string>
+    <string name="popular_coffee">Popular Coffee</string>
+    <string name="see_details">See Details</string>
+    <string name="detail_price">Detail Price</string>
+    <string name="statistik">Statistik</string>
+    <string name="year">Year</string>
+    <string name="rp_35_000">Rp. 35.000</string>
 
 
     <integer-array name="data_photo">

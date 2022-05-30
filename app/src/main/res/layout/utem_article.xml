@@ -4,17 +4,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/card_view"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:elevation="5dp"
-    android:layout_marginEnd="5dp"
-    android:layout_marginStart="5dp"
+    android:layout_height="@dimen/_90sdp"
+    android:layout_marginStart="2dp"
+    android:elevation="2dp"
     android:layout_marginBottom="10dp"
     android:background="@drawable/card">
 
     <ImageView
         android:id="@+id/imgItemPhoto"
         android:layout_width="@dimen/_90sdp"
-        android:layout_height="@dimen/_90sdp"
+        android:layout_height="match_parent"
+        android:contentDescription="TODO"
         android:src="@drawable/kopi_article"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,13 +22,11 @@
 
     <TextView
         android:id="@+id/tvJudulArtikel"
-        android:layout_width="230dp"
+        android:layout_width="180dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="30dp"
-        android:maxLines="2"
-        android:fontFamily="@font/poppins_medium"
         android:layout_marginTop="15dp"
+        android:fontFamily="@font/poppins_medium"
+        android:maxLines="2"
         android:text="@string/jakarta_terancam_banjir_pada_tahun_2033"
         android:textColor="@color/black"
         android:textSize="@dimen/_10sdp"
@@ -41,6 +39,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:textColor="@color/black"
         android:drawableStart="@drawable/kopi_article_news"
         android:drawablePadding="@dimen/_8sdp"
         android:fontFamily="@font/poppins"
@@ -54,15 +54,17 @@
         android:id="@+id/tvItemCreatedAt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
         android:layout_marginBottom="10dp"
         android:drawablePadding="@dimen/_8sdp"
         android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:textColor="@color/black"
         android:text="@string/_2022_05_12"
         android:textSize="11sp"
-        android:layout_marginEnd="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imgItemPhoto"
 
- />
+        app:layout_constraintTop_toTopOf="@+id/tvItemSource" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
