@@ -4,7 +4,6 @@ import android.app.Application
 import android.graphics.Bitmap
 import androidx.lifecycle.*
 import com.project.discofferytemp.di.Injection
-import com.project.discofferytemp.model.Place
 import com.project.discofferytemp.repository.ClasificationRepository
 
 import kotlinx.coroutines.launch

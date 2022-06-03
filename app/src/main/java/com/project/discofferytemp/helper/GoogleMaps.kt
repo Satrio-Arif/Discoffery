@@ -2,13 +2,12 @@ package com.project.discofferytemp.helper
 
 import android.util.Log
 import com.project.discofferytemp.api.ApiConfig
-import com.project.discofferytemp.model.Results
 import java.lang.StringBuilder
 
 object GoogleMaps {
     private val GOOGLE_API_URL = "https://maps.googleapis.com/"
     val network = ApiConfig.getApi(GOOGLE_API_URL)
-    var currentResult:Results? = null
+    //var currentResult:Results? = null
 
      fun geturl(paramlatitude: Double, paramlongitude: Double, param: String): String {
         val googlePlaceUrl = StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json")
