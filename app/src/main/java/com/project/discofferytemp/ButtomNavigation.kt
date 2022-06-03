@@ -3,6 +3,7 @@ package com.project.discofferytemp
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -96,7 +97,7 @@ class ButtomNavigation : AppCompatActivity() {
             true
         }
         binding.fab.setOnClickListener {
-            startCameraX()
+            startGallery()
         }
     }
 
@@ -120,7 +121,6 @@ class ButtomNavigation : AppCompatActivity() {
                 isBackCamera
             )
             startActivity(intent)
-
         }
     }
 
@@ -130,19 +130,32 @@ class ButtomNavigation : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-
         if (binding.bottomNavigationView.selectedItemId == R.id.home){
             super.onBackPressed()
             finish()
         }else{
             binding.bottomNavigationView.selectedItemId = R.id.home
         }
-
     }
 
+    private fun startGallery() {
+        val intent = Intent()
+        intent.action = Intent.ACTION_GET_CONTENT
+        intent.type = "image/*"
+        val chooser = Intent.createChooser(intent, "Choose a Picture")
+        launcherIntentGallery.launch(chooser)
+    }
+    private val launcherIntentGallery = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        if (result.resultCode == RESULT_OK) {
+            val selectedImg: Uri = result.data?.data as Uri
+            val myFile = uriToFile(selectedImg, this@ButtomNavigation)
 
-
-
-
+            val intent = Intent(this,ScanPhoto::class.java)
+            intent.putExtra("picture2", myFile)
+            startActivity(intent)
+        }
+    }
 
 }

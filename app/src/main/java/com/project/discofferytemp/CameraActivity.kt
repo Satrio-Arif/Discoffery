@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
 import android.widget.Toast
@@ -86,6 +87,7 @@ class CameraActivity : AppCompatActivity() {
     }
 
     private fun takePhoto() {
+
         val imageCapture = imageCapture ?: return
 
         val photoFile = createFile(application)
@@ -106,6 +108,7 @@ class CameraActivity : AppCompatActivity() {
                 }
 
                 override fun onImageSaved(output: ImageCapture.OutputFileResults) {
+                    showLoading(true)
                     val intent = Intent()
                     intent.putExtra("picture", photoFile)
                     intent.putExtra(
@@ -130,5 +133,12 @@ class CameraActivity : AppCompatActivity() {
             )
         }
         supportActionBar?.hide()
+    }
+    private fun showLoading(isLoad: Boolean) {
+        if (isLoad) {
+            binding.progressBar.visibility = View.VISIBLE
+        } else {
+            binding.progressBar.visibility = View.GONE
+        }
     }
 }
