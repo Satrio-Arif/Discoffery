@@ -22,6 +22,7 @@ class ScanPhoto : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityScanPhotoBinding.inflate(layoutInflater)
+        supportActionBar?.hide()
         setContentView(binding.root)
 
         val file = intent.getSerializableExtra("picture") as File
