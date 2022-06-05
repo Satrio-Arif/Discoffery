@@ -13,7 +13,7 @@
     <ImageView
         android:id="@+id/imgItemPhoto"
         android:layout_width="@dimen/_90sdp"
-        android:layout_height="match_parent"
+        android:layout_height="90dp"
         android:contentDescription="TODO"
         android:src="@drawable/kopi_article"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -30,7 +30,7 @@
         android:text="@string/jakarta_terancam_banjir_pada_tahun_2033"
         android:textColor="@color/black"
         android:textSize="@dimen/_10sdp"
-        app:layout_constraintEnd_toStartOf="@+id/imgItemPhoto"
+        android:layout_marginStart="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -47,7 +47,6 @@
         android:text="@string/sindo_news"
         android:textSize="11sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@+id/tvJudulArtikel" />
 
 
@@ -60,13 +59,11 @@
         android:drawablePadding="@dimen/_8sdp"
         android:fontFamily="@font/poppins"
         android:gravity="center"
-        android:textColor="@color/black"
         android:text="@string/_2022_05_12"
         android:textSize="11sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imgItemPhoto"
         android:textColor="@color/black"
-
         app:layout_constraintTop_toTopOf="@+id/tvItemSource" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

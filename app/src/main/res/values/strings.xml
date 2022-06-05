@@ -38,7 +38,7 @@
     <string name="banner_kopi">banner kopi</string>
     <string name="title">Bahaya Meminum Kopi Terlalu Banyak</string>
     <string name="sindo_news">Sindo News</string>
-    <string name="_2022_05_12">2022 – 05 - 12</string>
+    <string name="_2022_05_12">2022 – 05 – 12</string>
     <string name="jakarta_terancam_banjir_pada_tahun_2033">Jakarta Terancam Banjir Pada tahun 2033</string>
     <string name="just_for_you">JUST FOR YOU</string>
     <string name="read">Read</string>
@@ -53,7 +53,7 @@
     <string name="arabica">Arabica</string>
     <string name="aceh_indonesia">Aceh, Indonesia</string>
     <string name="rp_15_000_rp_20_000">Rp. 15.000 - Rp. 20.000</string>
-    <string name="welcome">Welcome,</string>
+    <string name="welcome">Welcome</string>
     <string name="discoffery">Discoffery</string>
     <string name="popular_coffee">Popular Coffee</string>
     <string name="see_details">See Details</string>
@@ -61,10 +61,42 @@
     <string name="statistik">Statistik</string>
     <string name="year">Year</string>
     <string name="rp_35_000">Rp. 35.000</string>
+    <string name="acehgayo">Aceh Gayo</string>
+    <string name="dampitt">Dampit</string>
+    <string name="tab_text_1">Home</string>
+    <string name="tab_text_2">Profile</string>
+    <string name="tab_text_3">Setting</string>
+    <string name="content_tab_home">Welcome Home</string>
+    <string name="content_tab_profile">Change your Profile here</string>
+    <string name="content_tab_text">This is Tab %1$d</string>
+    <string name="price_prediction_for_today">Price Prediction For Today</string>
+    <string name="scan_your_coffee_now">Scan Your Coffee Now !</string>
+    <string name="current_price">Current Price</string>
+    <string name="price">Price</string>
 
 
     <integer-array name="data_photo">
         <item>@drawable/kopi_article</item>
     </integer-array>
+    <string name="title_activity_profile">ProfileActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="hi">Hi,</string>
+    <string name="see_detail_price">See Detail Price</string>
+    <string name="price_coffee_beans_prediction">Price Coffee Beans Prediction</string>
+    <string name="see_detail_coffee_beans_price">See Detail Coffee Beans Price</string>
+    <string name="coffee_beans_price_predictions">Coffee Beans Price Predictions</string>
+    <string name="current_coffee_beans_price">Current Coffee Beans Price</string>
+    <string name="special_for_you">Special For You</string>
+    <string name="pondok_maharta_blok_a1_no_22">Pondok Maharta Blok A1 No/22</string>
+    <string name="address">Address</string>
+    <string name="scan_result">Scan Result :</string>
+    <string name="according_to_the_following_scan_results_are_the_percentages_of_the_closest_possible_coffee_beans">according to the following scan results are the percentages of the closest possible coffee beans</string>
+    <string name="let_s_go_to_find_coffee_shop">Let\'s Go To Find Coffee Shop</string>
 
 </resources>

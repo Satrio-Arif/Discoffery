@@ -55,6 +55,7 @@ class ButtomNavigation : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityButtomNavigationBinding.inflate(layoutInflater)
+        supportActionBar?.hide()
 
         setContentView(binding.root)
         transaction.beginTransaction().add(R.id.frame_container,Home()).commit()

@@ -2,13 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/home"
+        android:visible="true"
         android:icon="@drawable/ic_baseline_home_24"
         android:title="Home" />
 
     <item
         android:id="@+id/price"
-        android:icon="@drawable/ic_baseline_attach_money"
-        android:title="Price" />
+        android:visible="true"
+        android:icon="@drawable/ic_baseline_attach_money_inactive"
+        android:title="@string/price" />
 
     <item
         android:id="@+id/placeholder"
@@ -16,11 +18,13 @@
 
     <item
         android:id="@+id/Nearby"
+        android:visible="true"
         android:icon="@drawable/ic_baseline_location"
         android:title="Nearby" />
 
     <item
         android:id="@+id/Article"
+        android:visible="true"
         android:icon="@drawable/ic_baseline_article"
         android:title="Article" />
 </menu>
