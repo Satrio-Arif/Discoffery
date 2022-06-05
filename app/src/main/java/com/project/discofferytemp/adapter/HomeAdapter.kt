@@ -27,7 +27,7 @@ class HomeAdapter(val context: Context):RecyclerView.Adapter<HomeAdapter.Article
         parent: ViewGroup,
         viewType: Int
     ): ArticleHolder {
-        val view = UtemArticleBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            val view = UtemArticleBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ArticleHolder(view)
     }
 
