@@ -5,11 +5,13 @@
       <map>
         <entry key="..\:/DiscofferyTemp/app/src/main/res/drawable/ic_capture.xml" value="0.1" />
         <entry key="..\:/DiscofferyTemp/app/src/main/res/drawable/ic_place_holder.xml" value="0.1" />
-        <entry key="..\:/DiscofferyTemp/app/src/main/res/layout/activity_camera.xml" value="0.1" />
+        <entry key="..\:/DiscofferyTemp/app/src/main/res/layout/activity_camera.xml" value="0.22" />
         <entry key="..\:/DiscofferyTemp/app/src/main/res/layout/activity_detail_kopi.xml" value="0.33" />
         <entry key="..\:/DiscofferyTemp/app/src/main/res/layout/activity_detail_kopi2.xml" value="0.1" />
         <entry key="..\:/DiscofferyTemp/app/src/main/res/layout/activity_detail_kopi_article.xml" value="0.3625" />
         <entry key="..\:/DiscofferyTemp/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/DiscofferyTemp/app/src/main/res/layout/activity_view_place.xml" value="0.24320652173913043" />
+        <entry key="..\:/DiscofferyTemp/app/src/main/res/layout/utem_article.xml" value="0.1762917933130699" />
         <entry key="..\:/Users/phaks/AndroidStudioProjects/Discoffery/app/src/main/res/drawable/button_shape.xml" value="0.109" />
         <entry key="..\:/Users/phaks/AndroidStudioProjects/Discoffery/app/src/main/res/drawable/ic_baseline_attach_money.xml" value="0.109" />
         <entry key="..\:/Users/phaks/AndroidStudioProjects/Discoffery/app/src/main/res/drawable/shape_button.xml" value="0.109" />
