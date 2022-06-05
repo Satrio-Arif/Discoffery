@@ -1,21 +1,18 @@
 package com.project.discofferytemp
 
 import android.Manifest
-import android.content.Intent
 import android.content.IntentSender
 import android.content.pm.PackageManager
-import android.graphics.BitmapFactory
 import android.location.Location
-import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Looper
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.result.IntentSenderRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.common.api.ResolvableApiException
 import com.google.android.gms.location.*
@@ -26,18 +23,13 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
-import com.project.discofferytemp.adapter.ArticleAdapter
 import com.project.discofferytemp.adapter.MapsAdapter
 import com.project.discofferytemp.api.ApiService
 import com.project.discofferytemp.databinding.ActivityMapsBinding
 import com.project.discofferytemp.helper.GoogleMaps
-import com.project.discofferytemp.model.Articles
-import com.project.discofferytemp.model.Place
 import com.project.discofferytemp.model.Results
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import java.lang.StringBuilder
+import com.project.discofferytemp.viewmodel.MapsViewModel
+import com.project.discofferytemp.viewmodel.ViewModelFactoryMaps
 import java.util.concurrent.TimeUnit
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
@@ -54,13 +46,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     private var flag: Boolean = false
     private lateinit var lastLocation: Location
     private lateinit var nearetsStore: ApiService
-    private lateinit var coffeStore: Place
-
-    private var dataMap =ArrayList<Results>()
-
-    private var articlesData = ArrayList<Articles>()
-    //private var marker:Marker?  null
-
+    private lateinit var mapsViewModel: MapsViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,6 +56,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         supportActionBar?.hide()
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+        mapsViewModel = ViewModelProvider(this@MapsActivity,ViewModelFactoryMaps.getInstance()).get(MapsViewModel::class.java)
         nearetsStore = GoogleMaps.network
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
@@ -123,62 +110,37 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 stopLocationUpdates()
             } else {
                 nearestStore("cafe")
-                articlesData = setData()
-                showData(articlesData)
+
             }
         }
-
-//        mMap.setOnMarkerClickListener { marker ->
-//            GoogleMaps.currentResult = coffeStore.result[Integer.parseInt(marker.snippet ?: "0")]
-//            startActivity(Intent(this, ViewPlace::class.java))
-//            true
-//        }
 
     }
 
     private fun nearestStore(param: String) {
-        val url = geturl(this.latitude, this.longitude, param)
-        nearetsStore.getNearestStore(url).enqueue(object : Callback<Place> {
-            override fun onResponse(call: Call<Place>, response: Response<Place>) {
-
-                if (response.isSuccessful) {
-                    coffeStore = response.body()!!
-                    dataMap =response.body()!!.result as ArrayList<Results>
-
-                    for (i in 0 until response.body()!!.result.size) {
-                        val googleplace = response.body()?.result
-                        val lat = googleplace?.get(i)?.geometri?.location?.lat
-                        val lng = googleplace?.get(i)?.geometri?.location?.lng
-                        val placename = googleplace?.get(i)?.name
-                        val parmlatLng = LatLng(lat ?: -6.202436299999999, lng ?: 106.6527099)
-
-                        showStartMarker(parmlatLng, placename ?: "", i.toString())
-                    }
-                    showData1(dataMap)
-                }
+        val url = GoogleMaps.geturl(this.latitude, this.longitude, param)
+        mapsViewModel.getNearestStore(url)
+        mapsViewModel.place.observe(this){place->
+            if (place.result.isNotEmpty() && !place.status.equals("Error")){
+                showMarkerNearby(place.result)
+                showData1(place.result as ArrayList<Results>)
+            }else{
+                Toast.makeText(this,"DATA TIDAK ADA",Toast.LENGTH_SHORT).show()
             }
+        }
 
-            override fun onFailure(call: Call<Place>, t: Throwable) {
-                Toast.makeText(this@MapsActivity, t.message, Toast.LENGTH_SHORT).show()
-            }
-
-        })
     }
 
-    private fun geturl(paramlatitude: Double, paramlongitude: Double, param: String): String {
-        val googlePlaceUrl = StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json")
-        googlePlaceUrl.append("?location=${paramlatitude},${paramlongitude}")
-        googlePlaceUrl.append("&radius=500")
-        googlePlaceUrl.append("&type=$param")
-        googlePlaceUrl.append("&key=AIzaSyBEnAC2oDIfNxqS9vtgB6Bx0-XEM9GY2bY")
-        Log.d("MAP", "geturl:" + googlePlaceUrl.toString())
-        return googlePlaceUrl.toString()
+    private fun showMarkerNearby(paramData:List<Results>){
+        for (i in 0 until paramData.size) {
+            val lat = paramData.get(i).geometri.location.lat
+            val lng = paramData.get(i).geometri.location.lng
+            val placename = paramData.get(i).name
+            val parmlatLng = LatLng(lat ?: 0.0, lng ?: 106.6527099)
+            showStartMarker(parmlatLng, placename ?: "", i.toString())
+        }
     }
 
     private fun createLocationCallback() {
-//        if (latitude != 0.0){
-//            binding.btnStart.visibility = View.VISIBLE
-//        }
         locationCallback = object : LocationCallback() {
             override fun onLocationResult(location: LocationResult) {
                 super.onLocationResult(location)
@@ -186,46 +148,17 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 latitude = location.lastLocation.latitude
                 longitude = location.lastLocation.longitude
                 lastLocation = location.lastLocation
-
-//                if (marker != null){
-//                    marker?.remove()
-//                }
             }
         }
 
     }
 
-    private fun showData(value: ArrayList<Articles>) {
-        binding.rcMap.layoutManager =
-            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        val adapter = ArticleAdapter(this)
-        adapter.setData(value)
-        binding.rcMap.adapter = adapter
-        binding.btnStart.visibility = View.GONE
-    }
     private fun showData1(value: ArrayList<Results>) {
         binding.rcMap.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         val adapter = MapsAdapter(this)
         adapter.setdata(value)
         binding.rcMap.adapter = adapter
         binding.btnStart.visibility = View.GONE
-    }
-
-    private fun setData(): ArrayList<Articles> {
-        val tempData = ArrayList<Articles>()
-        val sumberData = "discoffery"
-        val uri = resources.obtainTypedArray(R.array.data_photo).getResourceId(0, -1)
-        val dataJudul = resources.getStringArray(R.array.judul)
-        for (i in 0..8) {
-            val article = Articles(
-                sumber = sumberData,
-                img = uri,
-                judul = dataJudul[i],
-                createdAt = "25-05-2022"
-            )
-            tempData.add(article)
-        }
-        return tempData
     }
 
     private fun createLocationRequest() {
@@ -264,13 +197,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 permissions[Manifest.permission.ACCESS_FINE_LOCATION] ?: false -> {
                     // Precise location access granted.
                     getMyLastLocation()
-
-
                 }
                 permissions[Manifest.permission.ACCESS_COARSE_LOCATION] ?: false -> {
                     // Only approximate location access granted.
                     getMyLastLocation()
-
                 }
                 else -> {
 
@@ -298,8 +228,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                     this.flag = false
                     updateText(false)
                     binding.btnStart.visibility = View.VISIBLE
-
-
                 } else {
                     showToast("Location not found ")
                     this.flag = true
@@ -325,7 +253,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 .title("Posisi Saat Ini")
 
         )
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(startLocation, 17f))
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(startLocation, 17f))
     }
 
     private fun showStartMarker(
@@ -361,9 +289,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                     startLocationUpdates()
                     Thread.sleep(3000)
                     binding.btnStart.visibility = View.VISIBLE
-
                 }
-
                 RESULT_CANCELED ->
                     Toast.makeText(
                         this@MapsActivity,
@@ -372,7 +298,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                     ).show()
             }
         }
-
     private fun startLocationUpdates() {
         try {
             fusedLocationClient.requestLocationUpdates(
@@ -393,10 +318,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         if (param) {
             binding.btnStart.setText("Dapatkan lokasi saat ini")
         } else {
-
             binding.btnStart.setText("Explore kopi")
         }
-
     }
-
 }

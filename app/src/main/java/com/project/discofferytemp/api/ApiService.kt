@@ -9,8 +9,8 @@ import retrofit2.http.Url
 
 interface ApiService {
     @GET
-    fun getNearestStore(@Url url:String):Call<Place>
+    suspend fun getNearestStore(@Url url:String):Place
 
     @GET
-    fun getDetailStore(@Url url:String):Call<PlaceDetail>
+    suspend fun getDetailStore(@Url url:String):PlaceDetail
 }
