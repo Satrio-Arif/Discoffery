@@ -15,7 +15,7 @@ class ArticleAdapter(val context: Context):RecyclerView.Adapter<ArticleAdapter.A
     fun setData(param:ArrayList<Articles>){
          this.dataArticle.clear()
          this.dataArticle.addAll(param)
-         notifyDataSetChanged()
+
      }
 
 

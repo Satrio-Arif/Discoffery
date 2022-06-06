@@ -109,14 +109,13 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 updateText(false)
                 stopLocationUpdates()
             } else {
-                nearestStore("cafe")
-
+                nearestStore()
             }
         }
 
     }
 
-    private fun nearestStore(param: String) {
+    private fun nearestStore(param: String ="cafe") {
         val url = GoogleMaps.geturl(this.latitude, this.longitude, param)
         mapsViewModel.getNearestStore(url)
         mapsViewModel.place.observe(this){place->
@@ -131,12 +130,12 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
     private fun showMarkerNearby(paramData:List<Results>){
-        for (i in 0 until paramData.size) {
+        for (i in paramData.indices) {
             val lat = paramData.get(i).geometri.location.lat
             val lng = paramData.get(i).geometri.location.lng
             val placename = paramData.get(i).name
-            val parmlatLng = LatLng(lat ?: 0.0, lng ?: 106.6527099)
-            showStartMarker(parmlatLng, placename ?: "", i.toString())
+            val parmlatLng = LatLng(lat , lng)
+            showStartMarker(parmlatLng, placename , i.toString())
         }
     }
 
@@ -316,9 +315,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private fun updateText(param: Boolean) {
         if (param) {
-            binding.btnStart.setText("Dapatkan lokasi saat ini")
+            binding.btnStart.setText(getString(R.string.dapat_Lokasi))
         } else {
-            binding.btnStart.setText("Explore kopi")
+            binding.btnStart.setText(getString(R.string.explore_kopi))
         }
     }
 }

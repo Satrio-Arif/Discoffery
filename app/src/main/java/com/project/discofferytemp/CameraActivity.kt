@@ -1,6 +1,7 @@
 package com.project.discofferytemp
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,6 +9,7 @@ import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.camera.core.CameraSelector
 import androidx.camera.core.ImageCapture
 import androidx.camera.core.ImageCaptureException
@@ -29,13 +31,12 @@ class CameraActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         cameraExecutor = Executors.newSingleThreadExecutor()
-        binding.switchCamera.setOnClickListener {
-            cameraSelector = if (cameraSelector.equals(CameraSelector.DEFAULT_BACK_CAMERA)) CameraSelector.DEFAULT_FRONT_CAMERA
-            else CameraSelector.DEFAULT_BACK_CAMERA
-            startCamera()
-        }
+
         binding.captureImage.setOnClickListener {
             takePhoto()
+        }
+        binding.galleryImage.setOnClickListener {
+            startGallery()
         }
     }
 
@@ -48,6 +49,26 @@ class CameraActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         cameraExecutor.shutdown()
+    }
+
+    private fun startGallery() {
+        val intent = Intent()
+        intent.action = Intent.ACTION_GET_CONTENT
+        intent.type = "image/*"
+        val chooser = Intent.createChooser(intent, "Choose a Picture")
+        launcherIntentGallery.launch(chooser)
+    }
+
+    private val launcherIntentGallery = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        if (result.resultCode == RESULT_OK) {
+            val selectedImg: Uri = result.data?.data as Uri
+            val myFile = uriToFile(selectedImg, this@CameraActivity)
+            val intent = Intent(this@CameraActivity, ScanPhoto::class.java)
+            intent.putExtra("picture", myFile)
+            startActivity(intent)
+        }
     }
 
     private fun startCamera() {
@@ -134,6 +155,7 @@ class CameraActivity : AppCompatActivity() {
         }
         supportActionBar?.hide()
     }
+
     private fun showLoading(isLoad: Boolean) {
         if (isLoad) {
             binding.progressBar.visibility = View.VISIBLE

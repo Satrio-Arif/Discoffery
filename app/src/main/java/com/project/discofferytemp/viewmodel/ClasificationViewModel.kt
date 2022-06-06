@@ -8,14 +8,15 @@ import com.project.discofferytemp.repository.ClasificationRepository
 
 import kotlinx.coroutines.launch
 
-class ClasificationViewModel(private val clasificationRepository: ClasificationRepository):ViewModel() {
+class ClasificationViewModel(private val clasificationRepository: ClasificationRepository) :
+    ViewModel() {
 
     private var _data = MutableLiveData<FloatArray>()
     val data: LiveData<FloatArray> = _data
 
-    fun clasification(bitmap:Bitmap,application: Application){
+    fun clasification(bitmap: Bitmap, application: Application) {
         viewModelScope.launch {
-            _data.value = clasificationRepository.getClasification(bitmap,application)
+            _data.value = clasificationRepository.getClasification(bitmap, application)
         }
 
     }

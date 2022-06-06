@@ -28,7 +28,8 @@ class MapsAdapter(var context: Context) :RecyclerView.Adapter<MapsAdapter.MapsHo
 
     override fun onBindViewHolder(holder: MapsHolder, position: Int) {
         holder.data.namaToko.text = dataMap[position].name
-        holder.data.ratingToko.rating = dataMap[position].rating.toFloat()
+        holder.data.ratingToko.rating = dataMap[position].rating
+        holder.data.alamatToko.text =dataMap[position].vincity
         Glide.with(holder.itemView.context)
             .load(GoogleMaps.getPhotoOfPlace(dataMap[position].photos[0].photo_reference,1000))// url gambar
             .into(holder.data.photoToko)
@@ -47,7 +48,7 @@ class MapsAdapter(var context: Context) :RecyclerView.Adapter<MapsAdapter.MapsHo
     }
 
     companion object{
-        val KEY ="id"
+        const val KEY ="id"
     }
 
 }

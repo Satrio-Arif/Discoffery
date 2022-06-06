@@ -4,12 +4,12 @@ import android.app.Application
 import android.graphics.Bitmap
 import com.project.discofferytemp.clasification.ImageClasification
 
-class ClasificationRepository{
+class ClasificationRepository {
 
     private var imageClasification = ImageClasification()
 
     fun getClasification(bitmap: Bitmap, application: Application): FloatArray {
-        return imageClasification.clasification(bitmap,application)
+        return imageClasification.clasification(bitmap, application)
     }
 
     companion object {

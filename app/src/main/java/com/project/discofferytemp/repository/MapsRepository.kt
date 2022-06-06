@@ -5,32 +5,32 @@ import com.project.discofferytemp.model.Place
 import com.project.discofferytemp.model.PlaceDetail
 import java.lang.Exception
 
-class MapsRepository (private val network:ApiService) {
+class MapsRepository(private val network: ApiService) {
 
-    suspend fun getNearbyPlace(url:String):Place{
-        var result =Place()
-        try{
-            result =network.getNearestStore(url)
-        }catch (e:Exception){
-            result.status ="Error"
+    suspend fun getNearbyPlace(url: String): Place {
+        var result = Place()
+        try {
+            result = network.getNearestStore(url)
+        } catch (e: Exception) {
+            result.status = "Error"
         }
-        return  result
+        return result
 
     }
 
-    suspend fun getDetailPlace(url:String):PlaceDetail{
-        var result =PlaceDetail()
-        try{
-            result =network.getDetailStore(url)
-        }catch (e:Exception){
-            result.status ="Error"
+    suspend fun getDetailPlace(url: String): PlaceDetail {
+        var result = PlaceDetail()
+        try {
+            result = network.getDetailStore(url)
+        } catch (e: Exception) {
+            result.status = "Error"
         }
-        return  result
+        return result
     }
 
     companion object {
         @Volatile
-        private var instance:MapsRepository? = null
+        private var instance: MapsRepository? = null
         fun getInstance(
             apiService: ApiService
         ): MapsRepository =

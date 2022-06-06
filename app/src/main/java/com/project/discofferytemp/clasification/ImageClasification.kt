@@ -8,8 +8,9 @@ import org.tensorflow.lite.DataType
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
-class ImageClasification  {
-    private fun getArrayofRgb(bitmap:Bitmap):ByteBuffer {
+
+class ImageClasification {
+    private fun getArrayofRgb(bitmap: Bitmap): ByteBuffer {
         val arrayOfZeros = IntArray(224 * 244)
         val byteBuffer = ByteBuffer.allocateDirect(4 * 224 * 224 * 3)
         byteBuffer.order(ByteOrder.nativeOrder())
@@ -29,11 +30,13 @@ class ImageClasification  {
         bitmap.recycle()
         return byteBuffer
     }
-    fun clasification(bitmap: Bitmap,application:Application):FloatArray{
-        val model = Kopi.newInstance(application)
-        val byteBuffer =getArrayofRgb(bitmap)
 
-        val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 224, 224, 3), DataType.FLOAT32)
+    fun clasification(bitmap: Bitmap, application: Application): FloatArray {
+        val model = Kopi.newInstance(application)
+        val byteBuffer = getArrayofRgb(bitmap)
+
+        val inputFeature0 =
+            TensorBuffer.createFixedSize(intArrayOf(1, 224, 224, 3), DataType.FLOAT32)
         inputFeature0.loadBuffer(byteBuffer)
 
         val outputs = model.process(inputFeature0)

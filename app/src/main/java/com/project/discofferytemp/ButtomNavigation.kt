@@ -3,7 +3,6 @@ package com.project.discofferytemp
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -21,7 +20,7 @@ import java.io.File
 
 class ButtomNavigation : AppCompatActivity() {
 
-    private lateinit var binding:ActivityButtomNavigationBinding
+    private lateinit var binding: ActivityButtomNavigationBinding
     private val transaction = supportFragmentManager
 
     companion object {
@@ -29,7 +28,6 @@ class ButtomNavigation : AppCompatActivity() {
         private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
         private const val REQUEST_CODE_PERMISSIONS = 10
     }
-
 
     private fun allPermissionsGranted() = REQUIRED_PERMISSIONS.all {
         ContextCompat.checkSelfPermission(baseContext, it) == PackageManager.PERMISSION_GRANTED
@@ -59,63 +57,52 @@ class ButtomNavigation : AppCompatActivity() {
         supportActionBar?.hide()
 
         setContentView(binding.root)
-        transaction.beginTransaction().add(R.id.frame_container,Home()).commit()
+        transaction.beginTransaction().add(R.id.frame_container, Home()).commit()
 
         if (!allPermissionsGranted()) {
             ActivityCompat.requestPermissions(
                 this,
-               REQUIRED_PERMISSIONS,
+                REQUIRED_PERMISSIONS,
                 REQUEST_CODE_PERMISSIONS
             )
         }
-
-
         binding.bottomNavigationView.background = null
         binding.bottomNavigationView.menu.getItem(2).isEnabled = false
         binding.bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.Nearby->{
-                    val fragment =Location()
-                    changeFragment(fragment)
-                    Thread.sleep(1000)
-                    val intent = Intent(this@ButtomNavigation,MapsActivity::class.java)
-                    startActivity(intent)
+                R.id.Nearby -> {
+                    changeFragment(Location())
                 }
-                R.id.Article->{
-                    val fragment = Article()
-
-                    changeFragment(fragment)
+                R.id.Article -> {
+                    changeFragment(Article())
                 }
-                R.id.home->{
-                    val fragment = Home()
-                    changeFragment(fragment)
+                R.id.home -> {
+                    changeFragment(Home())
                 }
-                R.id.price->{
-                    val fragment = Price()
-                    changeFragment(fragment)
+                R.id.price -> {
+                    changeFragment(Price())
                 }
             }
             true
         }
         binding.fab.setOnClickListener {
-            startGallery()
+            startCameraX()
         }
     }
 
     private fun startCameraX() {
         val intent = Intent(this, CameraActivity::class.java)
-
         launchCamera2.launch(intent)
     }
 
     private val launchCamera2 = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) {
-        if (it.resultCode == MainActivity.CAMERA_X_RESULT) {
+        if (it.resultCode == CAMERA_X_RESULT) {
             val myFile = it.data?.getSerializableExtra("picture") as File
             val isBackCamera = it.data?.getBooleanExtra("isBackCamera", true) as Boolean
 
-            val intent = Intent(this,ScanPhoto::class.java)
+            val intent = Intent(this, ScanPhoto::class.java)
             intent.putExtra("picture", myFile)
             intent.putExtra(
                 "isBackCamera",
@@ -125,38 +112,17 @@ class ButtomNavigation : AppCompatActivity() {
         }
     }
 
-    private fun changeFragment(fragment:Fragment){
-        Data.data.add(fragment::class.java.simpleName)
-        transaction.beginTransaction().replace(R.id.frame_container,fragment).commit()
+    private fun changeFragment(fragment: Fragment) {
+        transaction.beginTransaction().replace(R.id.frame_container, fragment).commit()
     }
 
     override fun onBackPressed() {
-        if (binding.bottomNavigationView.selectedItemId == R.id.home){
+        if (binding.bottomNavigationView.selectedItemId == R.id.home && Data.flag == 0) {
             super.onBackPressed()
             finish()
-        }else{
+        } else {
             binding.bottomNavigationView.selectedItemId = R.id.home
+            Data.flag = 0
         }
     }
-
-    private fun startGallery() {
-        val intent = Intent()
-        intent.action = Intent.ACTION_GET_CONTENT
-        intent.type = "image/*"
-        val chooser = Intent.createChooser(intent, "Choose a Picture")
-        launcherIntentGallery.launch(chooser)
-    }
-    private val launcherIntentGallery = registerForActivityResult(
-        ActivityResultContracts.StartActivityForResult()
-    ) { result ->
-        if (result.resultCode == RESULT_OK) {
-            val selectedImg: Uri = result.data?.data as Uri
-            val myFile = uriToFile(selectedImg, this@ButtomNavigation)
-
-            val intent = Intent(this,ScanPhoto::class.java)
-            intent.putExtra("picture2", myFile)
-            startActivity(intent)
-        }
-    }
-
 }

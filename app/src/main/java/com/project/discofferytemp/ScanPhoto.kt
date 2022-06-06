@@ -1,5 +1,6 @@
 package com.project.discofferytemp
 
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Matrix
@@ -9,6 +10,7 @@ import android.widget.Toast
 import androidx.exifinterface.media.ExifInterface
 import androidx.lifecycle.ViewModelProvider
 import com.project.discofferytemp.databinding.ActivityScanPhotoBinding
+import com.project.discofferytemp.helper.Data
 import com.project.discofferytemp.viewmodel.ClasificationViewModel
 import com.project.discofferytemp.viewmodel.ViewModelFactoryClasification
 import java.io.File
@@ -18,9 +20,6 @@ class ScanPhoto : AppCompatActivity() {
 
     private lateinit var binding: ActivityScanPhotoBinding
     private lateinit var model:ClasificationViewModel
-
-    private val classes = arrayOf("Aceh gayo", "Dampit", "Toraja")
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityScanPhotoBinding.inflate(layoutInflater)
@@ -29,22 +28,20 @@ class ScanPhoto : AppCompatActivity() {
 
         model =ViewModelProvider(this,ViewModelFactoryClasification.getInstance()).get(ClasificationViewModel::class.java)
 
-        val file = intent.getSerializableExtra("picture2") as File
-        //val isBackCamera = intent.getBooleanExtra("isBackCamera", true)
-
+        val file = intent.getSerializableExtra("picture") as File
         if (file != null){
             val bitmap1 =BitmapFactory.decodeFile(file.absolutePath).run {
                 val exif = ExifInterface(file.absolutePath)
-                val orientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, 1)
+                val orientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_UNDEFINED)
                 val matrix = Matrix()
                 when (orientation) {
-                    6 -> {
+                    ExifInterface.ORIENTATION_ROTATE_90 -> {
                         matrix.postRotate(90F)
                     }
-                    3 -> {
+                    ExifInterface.ORIENTATION_ROTATE_180-> {
                         matrix.postRotate(180F)
                     }
-                    8 -> {
+                    ExifInterface.ORIENTATION_ROTATE_270 -> {
                         matrix.postRotate(270F)
                     }
                 }
@@ -52,25 +49,19 @@ class ScanPhoto : AppCompatActivity() {
             }
 
             binding.previewImageView.setImageBitmap(bitmap1)
+
             val resize = Bitmap.createScaledBitmap(bitmap1,224,224,true)
 
             model.clasification(resize,application)
-
-            model.data.observe(this){result->
-                if (result.isNotEmpty()){
-                    val position  = getHighest(result)
-                    Toast.makeText(this,classes[position],Toast.LENGTH_SHORT).show()
-                    binding.confidenceAcehGayo.text = getString(R.string.aceh_gayo,convertToPersen(result[0]).toString(),"%")
-                    binding.confidenceDampit.text = getString(R.string.dampit,convertToPersen(result[1]).toString(),"%")
-                    binding.confidenceToraja.text = getString(R.string.toraja,convertToPersen(result[2]).toString(),"%")
-
-                }
-            }
-
+            classification()
+        }
+        binding.detailprice.setOnClickListener {
+            startActivity(Intent(this@ScanPhoto,DetailKopi::class.java))
+        }
+        binding.confidenceAcehGayo.setOnClickListener {
+            startActivity(Intent(this@ScanPhoto,DetailKopi::class.java))
         }
     }
-
-
 
     private fun convertToPersen(param:Float):Int{
 
@@ -82,14 +73,34 @@ class ScanPhoto : AppCompatActivity() {
         }
     }
     private fun getHighest(param:FloatArray):Int{
-        var max=0.0F
+        var max=0F
         var pos=0
-        for (i in 0 until param.size){
+        for (i in param.indices){
             if (param[i] > max){
                 max =param[i]
                 pos = i
             }
         }
         return pos
+    }
+
+    private fun classification(){
+        model.data.observe(this){result->
+            if (result.isNotEmpty()){
+                val position  = getHighest(result)
+                Toast.makeText(this, Data.classes[position],Toast.LENGTH_SHORT).show()
+                binding.confidenceAcehGayo.text = getString(R.string.aceh_gayo,convertToPersen(result[0]).toString(),"%")
+                binding.confidenceDampit.text = getString(R.string.dampit,convertToPersen(result[1]).toString(),"%")
+                binding.confidenceToraja.text = getString(R.string.toraja,convertToPersen(result[2]).toString(),"%")
+            }
+        }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val intent = Intent(this@ScanPhoto,ButtomNavigation::class.java)
+        intent.flags =Intent.FLAG_ACTIVITY_CLEAR_TOP
+        startActivity(intent)
+        finish()
     }
 }

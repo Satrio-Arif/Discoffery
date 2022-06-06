@@ -46,6 +46,6 @@
         android:contentDescription="@string/app_name"
         android:src="@drawable/ic_baseline_photo_camera_24"
         app:layout_anchor="@id/bottomAppBar"
-        android:backgroundTint="#8C5243" />
+        android:backgroundTint="#8C5243"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

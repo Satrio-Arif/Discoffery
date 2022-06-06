@@ -87,6 +87,7 @@ class OnboardingActivity : AppCompatActivity() {
                 val currentItemPosition = binding.viewPager.currentItem
                 if (currentItemPosition == itemlist.size - 1){
                     intent = Intent(this@OnboardingActivity, LoginActivty::class.java)
+                    intent.flags =Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                     startActivity(intent)
                 }
                 binding.viewPager.setCurrentItem(currentItemPosition + 1,true)

@@ -7,7 +7,6 @@
     tools:context=".MainActivity">
 
     <ImageView
-
         android:id="@+id/previewImageView"
         android:layout_width="match_parent"
         android:layout_height="430dp"
@@ -64,15 +63,14 @@
             android:text="@string/aceh_gayo"
             android:textAlignment="center"
             android:textColor="@color/c1"
-            android:textSize="@dimen/_12sdp">
-        </TextView>
+            android:textSize="@dimen/_12sdp" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
             android:layout_centerInParent="true"
             android:layout_marginEnd="30dp"
-            android:layout_alignParentEnd="true"
             android:src="@drawable/ic_baseline_keyboard_arrow_right_24" />
 
     </RelativeLayout>
@@ -92,8 +90,8 @@
             android:id="@+id/confidenceDampit"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginStart="20dp"
             android:layout_gravity="center"
+            android:layout_marginStart="20dp"
             android:drawablePadding="@dimen/_66sdp"
             android:fontFamily="@font/poppins_medium"
             android:gravity="center"

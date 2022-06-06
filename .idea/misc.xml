@@ -8,15 +8,21 @@
         <entry key="..\:/DiscofferyTemp/app/src/main/res/drawable/ic_capture.xml" value="0.1" />
         <entry key="..\:/DiscofferyTemp/app/src/main/res/drawable/ic_place_holder.xml" value="0.1" />
         <entry key="..\:/DiscofferyTemp/app/src/main/res/drawable/item_selector.xml" value="0.1" />
+        <entry key="..\:/DiscofferyTemp/app/src/main/res/layout-v26/activity_detail_kopi_article.xml" value="0.21331521739130435" />
         <entry key="..\:/DiscofferyTemp/app/src/main/res/layout/activity_buttom_navigation.xml" value="0.22" />
         <entry key="..\:/DiscofferyTemp/app/src/main/res/layout/activity_camera.xml" value="0.1" />
+        <entry key="..\:/DiscofferyTemp/app/src/main/res/layout/activity_detail_kopi.xml" value="0.24365942028985507" />
+        <entry key="..\:/DiscofferyTemp/app/src/main/res/layout/activity_detail_kopi_article.xml" value="0.21331521739130435" />
         <entry key="..\:/DiscofferyTemp/app/src/main/res/layout/activity_login_activty.xml" value="0.18" />
         <entry key="..\:/DiscofferyTemp/app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="..\:/DiscofferyTemp/app/src/main/res/layout/activity_scan_photo.xml" value="0.1" />
+        <entry key="..\:/DiscofferyTemp/app/src/main/res/layout/activity_maps.xml" value="0.1762917933130699" />
+        <entry key="..\:/DiscofferyTemp/app/src/main/res/layout/activity_profile.xml" value="0.21331521739130435" />
+        <entry key="..\:/DiscofferyTemp/app/src/main/res/layout/activity_scan_photo.xml" value="0.5" />
         <entry key="..\:/DiscofferyTemp/app/src/main/res/layout/fragment_article.xml" value="0.25" />
-        <entry key="..\:/DiscofferyTemp/app/src/main/res/layout/fragment_home.xml" value="0.22" />
-        <entry key="..\:/DiscofferyTemp/app/src/main/res/layout/fragment_location.xml" value="0.1" />
+        <entry key="..\:/DiscofferyTemp/app/src/main/res/layout/fragment_home.xml" value="0.5" />
+        <entry key="..\:/DiscofferyTemp/app/src/main/res/layout/fragment_location.xml" value="0.25" />
         <entry key="..\:/DiscofferyTemp/app/src/main/res/layout/fragment_price.xml" value="0.1" />
+        <entry key="..\:/DiscofferyTemp/app/src/main/res/layout/item_maps.xml" value="0.5" />
         <entry key="..\:/DiscofferyTemp/app/src/main/res/layout/utem_article.xml" value="0.33" />
         <entry key="..\:/DiscofferyTemp/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
         <entry key="..\:/Users/phaks/AndroidStudioProjects/Discoffery/app/src/main/res/drawable/bgbutton.xml" value="0.11" />

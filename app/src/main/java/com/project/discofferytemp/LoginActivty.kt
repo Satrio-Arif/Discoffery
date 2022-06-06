@@ -2,11 +2,9 @@ package com.project.discofferytemp
 
 import android.app.Activity
 import android.content.Intent
-import android.os.Binder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -21,7 +19,7 @@ import com.google.firebase.ktx.Firebase
 import com.project.discofferytemp.databinding.ActivityLoginActivtyBinding
 
 class LoginActivty : AppCompatActivity() {
-    private lateinit var binding : ActivityLoginActivtyBinding
+    private lateinit var binding: ActivityLoginActivtyBinding
     private lateinit var googleSignInClient: GoogleSignInClient
     private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,12 +54,10 @@ class LoginActivty : AppCompatActivity() {
         if (result.resultCode == Activity.RESULT_OK) {
             val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
             try {
-                // Google Sign In was successful, authenticate with Firebase
                 val account = task.getResult(ApiException::class.java)!!
                 Log.d(TAG, "firebaseAuthWithGoogle:" + account.id)
                 firebaseAuthWithGoogle(account.idToken!!)
             } catch (e: ApiException) {
-                // Google Sign In failed, update UI appropriately
                 Log.w(TAG, "Google sign in failed", e)
             }
         }
@@ -85,9 +81,9 @@ class LoginActivty : AppCompatActivity() {
     }
 
     private fun updateUI(currentUser: FirebaseUser?) {
-        if (currentUser != null){
+        if (currentUser != null) {
             startActivity(Intent(this@LoginActivty, ButtomNavigation::class.java))
-            Toast.makeText(this,"Selamat Anda Berhasil Login",Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Selamat Anda Berhasil Login", Toast.LENGTH_SHORT).show()
             finish()
         }
     }
