@@ -33,11 +33,12 @@ class HomeAdapter(val context: Context):RecyclerView.Adapter<HomeAdapter.Article
 
     override fun onBindViewHolder(holder: ArticleHolder, position: Int) {
         holder.data.imgItemPhoto.setImageResource(dataArticle[position].img)
-        holder.data.tvJudulArtikel.text =dataArticle[position].judul
-        holder.data.tvItemSource.text =dataArticle[position].sumber
-        holder.data.tvItemCreatedAt.text =dataArticle[position].createdAt
+        holder.data.tvJudulArtikel.text =dataArticle[position].Title
+        holder.data.tvItemSource.text =dataArticle[position].Source
+        //holder.data.tvItemCreatedAt.text =dataArticle[position].createdAt
         holder.itemView.setOnClickListener {
             val intent = Intent(context,DetailKopiArticle::class.java)
+            intent.putExtra(ArticleAdapter.DATA,dataArticle[position])
             context.startActivity(intent)
         }
     }
@@ -45,4 +46,5 @@ class HomeAdapter(val context: Context):RecyclerView.Adapter<HomeAdapter.Article
     override fun getItemCount(): Int {
         return dataArticle.size
     }
+
 }

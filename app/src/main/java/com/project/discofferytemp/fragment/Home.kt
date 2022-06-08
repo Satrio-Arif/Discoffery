@@ -7,19 +7,25 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.project.discofferytemp.*
 import com.project.discofferytemp.adapter.HomeAdapter
 import com.project.discofferytemp.databinding.FragmentHomeBinding
 import com.project.discofferytemp.helper.Data
 import com.project.discofferytemp.model.Articles
+import com.project.discofferytemp.viewmodel.ArticleViewModel
+import com.project.discofferytemp.viewmodel.HomeViewModel
+import com.project.discofferytemp.viewmodel.ViewModelFactoryArticle
+import com.project.discofferytemp.viewmodel.ViewModelFactoryHome
 import java.io.File
 
 
 class Home : Fragment() {
     private  var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding
-    private var articlesData = ArrayList<Articles>()
+    private lateinit var articlesData:ArrayList<Articles>
+    private lateinit var model: HomeViewModel
 
 
     override fun onCreateView(
@@ -35,8 +41,7 @@ class Home : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        articlesData = setData()
-        showData(articlesData)
+        showLoading(true)
         binding?.profileImage?.setOnClickListener {
 
             val intent = Intent(this@Home.context, ProfileActivity::class.java)
@@ -51,6 +56,17 @@ class Home : Fragment() {
         binding?.scanPhoto?.setOnClickListener {
             startCameraX()
         }
+        model = ViewModelProvider(this, ViewModelFactoryHome.getInstance()).get(HomeViewModel::class.java)
+        model.getArticle()
+        model.article.observe(viewLifecycleOwner){
+
+            this.articlesData =it
+            for (i in it.indices){
+                this.articlesData[i].img = resources.obtainTypedArray(R.array.data_photo).getResourceId(0, -1)
+            }
+            showData(this.articlesData)
+        }
+
     }
 
     private fun startCameraX() {
@@ -80,28 +96,21 @@ class Home : Fragment() {
         val adapter = HomeAdapter(requireActivity())
         adapter.setData(value)
         binding?.rvArticles?.adapter = adapter
+        showLoading(false)
     }
 
-    private fun setData(): ArrayList<Articles> {
-        val tempData = ArrayList<Articles>()
-        val sumberData = "discoffery"
-        val uri = resources.obtainTypedArray(R.array.data_photo).getResourceId(0, -1)
-        val dataJudul = resources.getStringArray(R.array.judul)
-        for (i in 0..8) {
-            val article = Articles(
-                sumber = sumberData,
-                img = uri,
-                judul = dataJudul[i],
-                createdAt = "25-05-2022"
-            )
-            tempData.add(article)
-        }
-        return tempData
-    }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun showLoading(Is_load: Boolean) {
+        if (Is_load) {
+            binding?.progressBar?.visibility = View.VISIBLE
+        } else {
+            binding?.progressBar?.visibility = View.GONE
+        }
     }
 
 

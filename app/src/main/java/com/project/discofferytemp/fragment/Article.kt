@@ -5,18 +5,21 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.project.discofferytemp.R
 import com.project.discofferytemp.adapter.ArticleAdapter
 import com.project.discofferytemp.databinding.FragmentArticleBinding
-import com.project.discofferytemp.databinding.FragmentHomeBinding
 import com.project.discofferytemp.model.Articles
+import com.project.discofferytemp.viewmodel.ArticleViewModel
+import com.project.discofferytemp.viewmodel.ViewModelFactoryArticle
 
 
 class Article : Fragment() {
     private var _binding: FragmentArticleBinding? = null
     private val binding get() = _binding
-    private var articlesData = ArrayList<Articles>()
+    private lateinit var model:ArticleViewModel
+    private lateinit var article:ArrayList<Articles>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,8 +32,18 @@ class Article : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        articlesData = setData()
-        showData(articlesData)
+        model =ViewModelProvider(this, ViewModelFactoryArticle.getInstance()).get(ArticleViewModel::class.java)
+        showLoading(true)
+        model.getArticle()
+
+        model.article.observe(viewLifecycleOwner){
+
+           this.article =it
+            for (i in it.indices){
+                this.article[i].img = resources.obtainTypedArray(R.array.data_photo).getResourceId(0, -1)
+            }
+            showData(this.article)
+        }
     }
 
     private fun showData(value: ArrayList<Articles>) {
@@ -38,29 +51,25 @@ class Article : Fragment() {
         val adapter = ArticleAdapter(requireActivity())
         adapter.setData(value)
         binding?.rvArticles?.adapter = adapter
+        showLoading(false)
     }
 
-    private fun setData(): ArrayList<Articles> {
-        val tempData = ArrayList<Articles>()
-        val sumberData = "discoffery"
-        val uri = resources.obtainTypedArray(R.array.data_photo).getResourceId(0, -1)
-        val dataJudul = resources.getStringArray(R.array.judul)
-        for (i in 0..8) {
-            val article = Articles(
-                sumber = sumberData,
-                img = uri,
-                judul = dataJudul[i],
-                createdAt = "25-05-2022"
-            )
-            tempData.add(article)
-        }
-        return tempData
-    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
+
+    private fun showLoading(Is_load: Boolean) {
+        if (Is_load) {
+            binding?.progressBar?.visibility = View.VISIBLE
+        } else {
+            binding?.progressBar?.visibility = View.GONE
+        }
+    }
+
+
 
 
 }

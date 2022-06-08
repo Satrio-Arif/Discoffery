@@ -33,16 +33,20 @@ class ArticleAdapter(val context: Context):RecyclerView.Adapter<ArticleAdapter.A
 
     override fun onBindViewHolder(holder: ArticleHolder, position: Int) {
         holder.data.imgItemPhoto.setImageResource(dataArticle[position].img)
-        holder.data.tvJudulArtikel.text =dataArticle[position].judul
-        holder.data.tvItemSource.text =dataArticle[position].sumber
-        holder.data.tvItemCreatedAt.text =dataArticle[position].createdAt
+        holder.data.tvJudulArtikel.text =dataArticle[position].Title
+        holder.data.tvItemSource.text =dataArticle[position].Source
+        //holder.data.tvItemCreatedAt.text =dataArticle[position].createdAt
         holder.itemView.setOnClickListener {
             val intent = Intent(context,DetailKopiArticle::class.java)
+            intent.putExtra(DATA,dataArticle[position])
             context.startActivity(intent)
         }
     }
 
     override fun getItemCount(): Int {
         return dataArticle.size
+    }
+    companion object{
+        const val DATA="data"
     }
 }
