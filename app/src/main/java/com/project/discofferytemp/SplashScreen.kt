@@ -13,6 +13,7 @@ class SplashScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySplashScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.hide()
         Handler(Looper.getMainLooper()).postDelayed({
             val intent = Intent(this, OnboardingActivity::class.java)
             intent.flags =Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK

@@ -26,6 +26,7 @@
         <entry key="..\:/DiscofferyTemp/app/src/main/res/layout/utem_article.xml" value="0.33" />
         <entry key="..\:/DiscofferyTemp/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
         <entry key="..\:/Users/phaks/AndroidStudioProjects/Discoffery/app/src/main/res/drawable/bgbutton.xml" value="0.11" />
+        <entry key="..\:/Users/phaks/AndroidStudioProjects/Discoffery/app/src/main/res/drawable/bgfb.xml" value="0.11" />
         <entry key="..\:/Users/phaks/AndroidStudioProjects/Discoffery/app/src/main/res/drawable/buttoncamera.xml" value="0.11" />
         <entry key="..\:/Users/phaks/AndroidStudioProjects/Discoffery/app/src/main/res/drawable/card.xml" value="0.11" />
         <entry key="..\:/Users/phaks/AndroidStudioProjects/Discoffery/app/src/main/res/drawable/currentshape.xml" value="0.11" />
@@ -35,12 +36,14 @@
         <entry key="..\:/Users/phaks/AndroidStudioProjects/Discoffery/app/src/main/res/drawable/ic_baseline_photo_camera.xml" value="0.11" />
         <entry key="..\:/Users/phaks/AndroidStudioProjects/Discoffery/app/src/main/res/drawable/ic_baseline_photo_camera_24.xml" value="0.11" />
         <entry key="..\:/Users/phaks/AndroidStudioProjects/Discoffery/app/src/main/res/drawable/item_selector.xml" value="0.11" />
+        <entry key="..\:/Users/phaks/AndroidStudioProjects/Discoffery/app/src/main/res/drawable/shapeinput.xml" value="0.11" />
         <entry key="..\:/Users/phaks/AndroidStudioProjects/Discoffery/app/src/main/res/layout/activity_buttom_navigation.xml" value="0.16126042632066728" />
         <entry key="..\:/Users/phaks/AndroidStudioProjects/Discoffery/app/src/main/res/layout/activity_camera.xml" value="0.18426678067550234" />
         <entry key="..\:/Users/phaks/AndroidStudioProjects/Discoffery/app/src/main/res/layout/activity_detail_kopi.xml" value="0.18" />
-        <entry key="..\:/Users/phaks/AndroidStudioProjects/Discoffery/app/src/main/res/layout/activity_login_activty.xml" value="0.33" />
+        <entry key="..\:/Users/phaks/AndroidStudioProjects/Discoffery/app/src/main/res/layout/activity_login_activty.xml" value="0.22" />
         <entry key="..\:/Users/phaks/AndroidStudioProjects/Discoffery/app/src/main/res/layout/activity_main.xml" value="0.16126042632066728" />
-        <entry key="..\:/Users/phaks/AndroidStudioProjects/Discoffery/app/src/main/res/layout/activity_profile.xml" value="0.18426678067550234" />
+        <entry key="..\:/Users/phaks/AndroidStudioProjects/Discoffery/app/src/main/res/layout/activity_onboarding.xml" value="0.16" />
+        <entry key="..\:/Users/phaks/AndroidStudioProjects/Discoffery/app/src/main/res/layout/activity_profile.xml" value="0.22" />
         <entry key="..\:/Users/phaks/AndroidStudioProjects/Discoffery/app/src/main/res/layout/activity_register.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/phaks/AndroidStudioProjects/Discoffery/app/src/main/res/layout/activity_scan_photo.xml" value="0.2" />
         <entry key="..\:/Users/phaks/AndroidStudioProjects/Discoffery/app/src/main/res/layout/content_profile.xml" value="0.16126042632066728" />

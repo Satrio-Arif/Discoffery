@@ -100,5 +100,17 @@
     <string name="scan_result">Scan Result :</string>
     <string name="according_to_the_following_scan_results_are_the_percentages_of_the_closest_possible_coffee_beans">according to the following scan results are the percentages of the closest possible coffee beans</string>
     <string name="let_s_go_to_find_coffee_shop">Let\'s Go To Find Coffee Shop</string>
+    <string name="continue_with_google">CONTINUE WITH GOOGLE</string>
+    <string name="continue_with_facebook">CONTINUE WITH FACEBOOK</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="enter_your_phone_number">Enter Your Phone Number</string>
+    <string name="_62">+62</string>
+    <string name="divideer">|</string>
+    <string name="name">Name</string>
+    <string name="bangkit_team_discoffery">Bangkit Team - Discoffery</string>
+    <string name="update_profile">Update Profile</string>
+    <string name="_085170539399">085170539399</string>
+    <string name="profile_page">Profile Page</string>
+    <string name="logout">Logout</string>
 
 </resources>

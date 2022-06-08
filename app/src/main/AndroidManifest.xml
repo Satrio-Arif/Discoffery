@@ -18,7 +18,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DiscofferyTemp">
         <activity
-            android:name=".ProfileActivity"
+            android:name=".SplashScreen"
             android:exported="false" />
         <activity
             android:name=".ViewPlace"
@@ -33,7 +33,7 @@
             android:name=".OnboardingActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".ProfileActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -46,8 +46,7 @@
             android:exported="false" />
         <activity
             android:name=".LoginActivty"
-            android:exported="false"
-            android:theme="@style/Theme.Fab_Bottom_app_bar" />
+            android:exported="false" />
         <activity
             android:name=".RegisterActivity"
             android:exported="false" />
