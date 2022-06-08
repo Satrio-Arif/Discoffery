@@ -1,4 +1,5 @@
 package com.project.discofferytemp.api
+import com.project.discofferytemp.model.Articles
 import com.project.discofferytemp.model.Place
 import com.project.discofferytemp.model.PlaceDetail
 import retrofit2.http.GET
@@ -10,4 +11,7 @@ interface ApiService {
 
     @GET
     suspend fun getDetailStore(@Url url:String):PlaceDetail
+
+    @GET("article_coffe")
+    suspend fun getArticle():ArrayList<Articles>
 }
