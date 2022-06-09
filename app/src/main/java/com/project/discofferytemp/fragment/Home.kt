@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.auth.FirebaseAuth
 import com.project.discofferytemp.*
 import com.project.discofferytemp.adapter.HomeAdapter
 import com.project.discofferytemp.databinding.FragmentHomeBinding
@@ -26,6 +27,7 @@ class Home : Fragment() {
     private val binding get() = _binding
     private lateinit var articlesData:ArrayList<Articles>
     private lateinit var model: HomeViewModel
+    private lateinit var auth: FirebaseAuth
 
 
     override fun onCreateView(
@@ -41,6 +43,10 @@ class Home : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        auth = FirebaseAuth.getInstance()
+        val user =auth.currentUser
+
+        binding?.tvName?.text =user?.displayName?:"data"
         showLoading(true)
         binding?.profileImage?.setOnClickListener {
 

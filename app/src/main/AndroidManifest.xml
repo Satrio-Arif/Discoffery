@@ -18,7 +18,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DiscofferyTemp">
         <activity
-            android:name=".SplashScreen"
+            android:name=".ProfileActivity"
             android:exported="false" />
         <activity
             android:name=".ViewPlace"
@@ -33,7 +33,7 @@
             android:name=".OnboardingActivity"
             android:exported="false" />
         <activity
-            android:name=".ProfileActivity"
+            android:name=".SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
