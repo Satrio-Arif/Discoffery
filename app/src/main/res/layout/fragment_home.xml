@@ -13,13 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_135sdp"
-            android:background="@color/c1"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+
 
         <TextView
             android:id="@+id/textView6"
@@ -27,10 +21,11 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="40dp"
+            android:letterSpacing="0.1"
             android:fontFamily="@font/poppins_medium"
             android:text="@string/hi"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_14sdp"
+            android:textColor="@color/black"
+            android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -42,8 +37,9 @@
             android:layout_marginTop="40dp"
             android:fontFamily="@font/poppins_medium"
             android:text="@string/welcome"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_14sdp"
+            android:textColor="@color/black"
+            android:letterSpacing="0.1"
+            android:textSize="12sp"
             app:layout_constraintStart_toEndOf="@+id/textView6"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -51,10 +47,10 @@
             android:id="@+id/tvName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins"
+            android:fontFamily="@font/poppins_medium"
             android:text="@string/discoffery"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_12sdp"
+            android:textColor="@color/black"
+            android:textSize="15sp"
             app:layout_constraintStart_toStartOf="@+id/textView6"
             app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
@@ -63,7 +59,7 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginEnd="20dp"
-            android:src="@drawable/superhero"
+            android:src="@drawable/prof"
             app:layout_constraintBottom_toBottomOf="@+id/tvName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/welcome">
@@ -71,12 +67,24 @@
         </ImageView>
 
 
-        <ImageView
+        <TextView
             android:id="@+id/scanPhoto"
-            android:layout_width="wrap_content"
-            android:layout_height="80dp"
+            android:layout_width="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_height="50dp"
             android:layout_marginTop="32dp"
-            android:src="@drawable/scanfitur"
+            android:gravity="center_vertical"
+            android:letterSpacing="0.1"
+            android:textColor="@color/c1"
+            android:paddingStart="10dp"
+            android:drawablePadding="16dp"
+            android:textSize="14sp"
+            android:fontFamily="@font/poppins_medium"
+            android:textStyle="bold"
+            android:drawableLeft="@drawable/sken"
+            android:text="@string/scan_and_identify_coffee_beans"
+            android:background="@drawable/shape"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvName" />
@@ -92,40 +100,21 @@
             android:text="@string/coffee_beans_price_predictions"
             android:textColor="@color/black"
             android:textSize="@dimen/_12sdp"
+            android:letterSpacing="0.1"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/scanPhoto" />
 
-        <TextView
-            android:id="@+id/seeDetails"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="5dp"
-            android:fontFamily="@font/poppins_medium"
-            android:text="@string/current_coffee_beans_price"
-            android:textColor="@color/c1"
-            android:textSize="@dimen/_8sdp"
-            app:layout_constraintStart_toEndOf="@+id/imageView15"
-            app:layout_constraintTop_toBottomOf="@+id/imageView13" />
-
-        <ImageView
-            android:id="@+id/imageView15"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginEnd="150dp"
-            android:src="@drawable/currentshape"
-            app:layout_constraintBottom_toBottomOf="@+id/seeDetails"
-            app:layout_constraintEnd_toEndOf="@+id/imageView13"
-            app:layout_constraintStart_toStartOf="@+id/imageView13"
-            app:layout_constraintTop_toTopOf="@+id/seeDetails" />
 
 
-        <ImageView
-            android:id="@+id/imageView13"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/lineChart"
+            android:layout_width="match_parent"
+            android:layout_marginEnd="30dp"
+            android:layout_height="250dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
             android:src="@drawable/statsitsi"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/CoffeePrice" />
@@ -136,7 +125,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="@+id/seeDetails"
+            app:layout_constraintBottom_toBottomOf="@+id/lineChart"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
@@ -159,13 +148,13 @@
             android:id="@+id/detailprice"
             android:layout_width="@dimen/_280sdp"
             android:layout_height="48dp"
-            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginTop="18dp"
             android:background="@drawable/bgbutton"
             android:gravity="center"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView15">
+            app:layout_constraintTop_toBottomOf="@+id/lineChart">
 
             <TextView
                 android:id="@+id/home_to_price"
@@ -195,6 +184,7 @@
             android:text="@string/articles"
             android:textColor="@color/black"
             android:textSize="@dimen/_14sdp"
+            android:letterSpacing="0.1"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/divider" />
@@ -204,7 +194,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="12dp"
             android:layout_marginEnd="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

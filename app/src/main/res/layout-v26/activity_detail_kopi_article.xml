@@ -62,7 +62,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginEnd="@dimen/_24sdp"
             android:text="@string/isi_artikel"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@+id/judulArtikel"
             app:layout_constraintHorizontal_bias="0.0"

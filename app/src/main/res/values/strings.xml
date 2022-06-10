@@ -15,7 +15,7 @@
     <string name="toraja">Confidence toraja : %s %s</string>
     <string name="judul_Artikel">Bahaya Meminum Kopi Terlalu Banyak </string>
     <string name="dapat_Lokasi">Dapatkan lokasi saat ini </string>
-    <string name="explore_kopi">Explore Kopi</string>
+    <string name="explore_kopi">Let\'s Explore Coffee Shop</string>
     <string name="cari_Kopi">Mau kopi ini? Yuk cari di sekitarmu</string>
     <string name="isi_artikel"> PURE  NATURAL COFFEE
     Since 1963, we have scoured the world for the best coffee available anywhere and we expertly roast our beans in small batches for optimal flavor. We purchase our beans direct from coffee farmers building on decades-long relationships to ensure we get the top 1% of the best arabica beans in the world. So, we know where every coffee bean comes from. Now the same great coffee we use in our store locations are available in retail packages. Buy coffee online here.
@@ -112,5 +112,10 @@
     <string name="_085170539399">085170539399</string>
     <string name="profile_page">Profile Page</string>
     <string name="logout">Logout</string>
+    <string name="scan_and_identify_coffee_beans">Scan And Identify Coffee Beans</string>
+    <string name="explore">Explore</string>
+    <string name="the_nearest_coffee_shop">The Nearest Coffee Shop</string>
+    <string name="coffee_shop_around_you">Coffee Shop Around You</string>
+    <string name="let_s_find_the_nearest_coffee_shop">Let\'s Find The Nearest Coffee Shop</string>
 
 </resources>

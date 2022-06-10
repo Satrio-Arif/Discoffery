@@ -33,7 +33,7 @@
             android:name=".OnboardingActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".ButtomNavigation"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -51,7 +51,7 @@
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".ButtomNavigation"
+            android:name=".SplashScreen"
             android:exported="false" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
