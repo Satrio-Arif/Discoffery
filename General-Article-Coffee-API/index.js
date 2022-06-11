@@ -13,8 +13,8 @@ app.get("/", async (req, res) => {
 });
 
 app.get("/:article_coffe", async (req, res) => {
-  const query = "SELECT * FROM article_coffe WHERE name = ?";
-  pool.query(query, [ req.params.breed ], (error, results) => {
+  const query = "SELECT * FROM article_coffe";
+  pool.query(query, [ req.params.article_coffe ], (error, results) => {
     if (!results[0]) {
       res.json({ status: "Not found!" });
     } else {
