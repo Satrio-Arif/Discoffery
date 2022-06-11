@@ -10,7 +10,7 @@ we used this following services as our infrastructure :
 
 Deployment:
 
-- ## ![This is an image](cloud.png)
+- ## ![This is an image](Cloud.png)
 
 1.	Before deploying API on cloud run, we write code in nodejs for a function of the discoffery application, beginning with installing the framework, installing dependencies, connecting to the database, and writing code.
 2.	Next, we create a mysql database in the sql cloud using an existing service to store prepared data.
