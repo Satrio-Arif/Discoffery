@@ -1,4 +1,4 @@
-Documentation
+## Documentation
 
 Cloud Services:
 we used this following services as our infrastructure :
@@ -7,6 +7,9 @@ we used this following services as our infrastructure :
 - Cloud storage to store dcoker images in container registry
 
 Deployment:
+
+## ![This is an image](Cloud.png)
+
 1.	Before deploying API on cloud run, we write code in nodejs for a function of the discoffery application, beginning with installing the framework, installing dependencies, connecting to the database, and writing code.
 2.	Next, we create a mysql database in the sql cloud using an existing service to store prepared data.
 3.	Then, in the following step, we create a dockerfile in which this docker is used. to create an image with a set of commands, instructions (arguments) to be executed sequentially and automatically
