@@ -8,6 +8,6 @@ D I S C O F F E R Y is built to make it easier for coffee enthusiasts to get all
 
 
 ## Documentation for each learning path:
-- ## [&nbsp;&nbsp;Machine Learning &rarr;](https://github.com/Satrio-Arif/Discoffery/tree/ML)
-- ## [&nbsp;&nbsp;Android Mobile Development &rarr;](https://github.com/Satrio-Arif/Discoffery/tree/MD)
-- ## [&nbsp;&nbsp;Cloud Computing &rarr;](https://github.com/Satrio-Arif/Discoffery/tree/CC)
+- ## ![This is an image](tensorflow.png)[&nbsp;&nbsp;Machine Learning &rarr;](https://github.com/Satrio-Arif/Discoffery/tree/ML)
+- ## ![This is an image](mobile.png)[&nbsp;&nbsp;Android Mobile Development &rarr;](https://github.com/Satrio-Arif/Discoffery/tree/MD)
+- ## ![This is an image](cloud.png)[&nbsp;&nbsp;Cloud Computing &rarr;](https://github.com/Satrio-Arif/Discoffery/tree/CC)
