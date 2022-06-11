@@ -1,4 +1,4 @@
-#  D I S C O F F E R Y
+# ![This is an image](DiscofferyLogo.png) D I S C O F F E R Y
 
 
 > Proudly presented by Capstonks Team C22-PS092
