@@ -48,28 +48,28 @@ class OnboardingActivity : AppCompatActivity() {
             OnboardingData(
                 R.drawable.ob1,
                 R.drawable.h1,
-                "Lorem ipsum dolor sit amet, consectetur  adipiscin adipiscing elit."
+                "We Are Here to Help You To Find The Best Coffee Beans"
             )
         )
         items.add(
             OnboardingData(
                 R.drawable.ob2,
                 R.drawable.h2,
-                "Lorem ipsum dolor sit amet, consectetur  adipiscin adipiscing elit."
+                "Get more knowledge from read all article that we provide"
             )
         )
         items.add(
             OnboardingData(
                 R.drawable.ob3,
                 R.drawable.h3,
-                "Lorem ipsum dolor sit amet, consectetur  adipiscin adipiscing elit."
+                "Do You Want To Buy A Coffee Beans ? Check The Price Predictions Before You Buy It"
             )
         )
         items.add(
             OnboardingData(
                 R.drawable.ob4,
                 R.drawable.h4,
-                "Lorem ipsum dolor sit amet, consectetur  adipiscin adipiscing elit."
+                "Don't Forget To Try Our Main Features For Scanning Your Coffee Beans"
             )
         )
         return items

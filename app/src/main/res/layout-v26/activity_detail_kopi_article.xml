@@ -35,7 +35,7 @@
 
         <TextView
             android:id="@+id/judulArtikel"
-            android:layout_width="wrap_content"
+            android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:fontFamily="@font/poppins_medium"
@@ -46,7 +46,6 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/isiArtikel"
             app:layout_constraintEnd_toEndOf="@+id/bannerKopiDetail"
-
             app:layout_constraintStart_toStartOf="@+id/bannerKopiDetail"
             app:layout_constraintTop_toBottomOf="@id/bannerKopiDetail" />
 
