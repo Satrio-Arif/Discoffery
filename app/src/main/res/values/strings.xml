@@ -117,5 +117,10 @@
     <string name="the_nearest_coffee_shop">The Nearest Coffee Shop</string>
     <string name="coffee_shop_around_you">Coffee Shop Around You</string>
     <string name="let_s_find_the_nearest_coffee_shop">Let\'s Find The Nearest Coffee Shop</string>
+    <string name="data_set_day_1_30">Average Data Set Day 1 – 30</string>
+    <string name="data_set_last_60_days">Average Data Set Last 60 Days</string>
+    <string name="rp_75_393">Rp. 75.393</string>
+    <string name="rp_80_392">Rp. 80.392</string>
+    <string name="next_month_price_prediction">Average Next Month Price Prediction</string>
 
 </resources>
