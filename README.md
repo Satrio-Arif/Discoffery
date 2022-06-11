@@ -46,3 +46,4 @@ Repository for bangkit capstone project
   ```
   
   2. Android Architecture
+     ![This is an image](architect.jpeg)
