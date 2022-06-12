@@ -5,7 +5,7 @@
 Cloud Services
 we used this following services as our infrastructure :
 - Cloud Run to run the back-end of the apps 
-- Cloud SQL (PostgreSQL) to store article data and it's reports 
+- Cloud SQL (MySQL) to store article data and it's reports 
 - Cloud storage to store dcoker images in container registry
 
 Deployment:
