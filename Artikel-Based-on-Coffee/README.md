@@ -1,4 +1,4 @@
-# DICOFFERY-APP-BACKEND
+# DICOFFERY-ARTICLE BASED ON COFFEE-BACKEND
 
 
 ### General Info
@@ -25,7 +25,7 @@ Project is Created with :
   <li>Node Version v16.14.0</li>
   <li>Npm version 8.3.1</li>
   <li>Google Cloud Sql: Mysql 8.0</li>
-  <li>Cloud Run/li>
+  <li>Cloud Run</li>
   <li>DockerFile</li>
 </ul>
 
