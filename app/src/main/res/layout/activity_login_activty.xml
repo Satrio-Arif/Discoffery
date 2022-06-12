@@ -131,6 +131,7 @@
         android:layout_height="wrap_content"
         android:text="@string/phone_number"
         android:layout_marginTop="18dp"
+        android:textColor="@color/black"
         android:layout_marginStart="30dp"
         android:fontFamily="@font/poppins_medium"
         android:textSize="@dimen/_14sdp"
@@ -178,12 +179,13 @@
                 app:layout_constraintStart_toEndOf="@+id/textView9"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <EditText
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginStart="18dp"
                 android:fontFamily="@font/poppins"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:gravity="center"
+                android:textColor="@color/black"
                 android:hint="@string/enter_your_phone_number"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"

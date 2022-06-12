@@ -34,7 +34,7 @@ class DetailKopi : AppCompatActivity() {
         binding.nationality.text =param.origin
         binding.nationality2.text =param.variety
         binding.aboutCoffeedetail.text =param.about
-        binding.nationality3.text =param.Altitude
+        binding.    nationality3.text =param.Altitude
         binding.priceDetail.text =param.price
 
     }

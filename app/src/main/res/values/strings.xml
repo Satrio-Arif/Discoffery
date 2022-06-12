@@ -122,5 +122,10 @@
     <string name="rp_75_393">Rp. 75.393</string>
     <string name="rp_80_392">Rp. 80.392</string>
     <string name="next_month_price_prediction">Average Next Month Price Prediction</string>
+    <string name="sulawesi_indonesia">Sulawesi, Indonesia</string>
+    <string name="altitude">Altitude</string>
+    <string name="rp_30_000_rp_50_000">Rp. 30.000 - Rp, 50.000</string>
+    <string name="indonesia">Indonesia</string>
+    <string name="species">Species</string>
 
 </resources>
