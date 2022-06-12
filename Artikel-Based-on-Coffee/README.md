@@ -4,7 +4,8 @@
 ### General Info
 This is Backend repository for Database Article Based on Coffee for showing Article About Coffee. Using the Javascript programming language by using the Node.js libraries, ORM Sequelieze and Framework Express.
 
-
+> My Dependencies For Article Based on Coffee
+```
 "dependencies": {
     "body-parser": "^1.20.0",
     "docker": "^1.0.0",
@@ -16,6 +17,7 @@ This is Backend repository for Database Article Based on Coffee for showing Arti
     "nodemon": "^2.0.16",
     "qs": "^6.10.5",
     "sequelize": "^6.20.1"
+ ```
     
 ### Technologies
 Project is Created with : 
