@@ -1,0 +1,30 @@
+{
+  "name": "coffee",
+  "version": "1.0.0",
+  "description": "Article Based of Coffee",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "keywords": [
+    "mysql2",
+    "nodejs",
+    "express",
+    "Article"
+  ],
+  "author": "c2204f1905@bangkit.academy - Richard Martin T",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "docker": "^1.0.0",
+    "express": "^4.18.1",
+    "merge-descriptors": "^1.0.1",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.16",
+    "qs": "^6.10.5",
+    "sequelize": "^6.20.1"
+  }
+}
