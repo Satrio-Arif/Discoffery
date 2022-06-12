@@ -37,7 +37,7 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card1"
-            android:layout_width="100dp"
+            android:layout_width="110dp"
             android:layout_height="117dp"
             android:layout_marginTop="28dp"
             app:cardBackgroundColor="#C7745E"
@@ -64,10 +64,11 @@
 
                 <TextView
                     android:id="@+id/nationality"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:text="Indonesia"
+                    android:textAlignment="center"
                     android:textColor="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.508"
@@ -78,21 +79,21 @@
                     android:id="@+id/origin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
                     android:text="Origin"
                     android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.506"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/nationality" />
+                    app:layout_constraintHorizontal_bias="0.508"
+                    app:layout_constraintStart_toStartOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card2"
-            android:layout_width="100dp"
-            android:layout_height="120dp"
+            android:layout_width="110dp"
+            android:layout_height="117dp"
             android:layout_marginStart="15dp"
             android:layout_marginTop="28dp"
             app:cardBackgroundColor="#C7745E"
@@ -105,7 +106,6 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-
                 <ImageView
                     android:id="@+id/homeIcon2"
                     android:layout_width="wrap_content"
@@ -121,10 +121,11 @@
 
                 <TextView
                     android:id="@+id/nationality2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:text="Indonesia"
+                    android:textAlignment="center"
                     android:textColor="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.508"
@@ -135,21 +136,20 @@
                     android:id="@+id/origin2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="Origin"
+                    android:layout_marginBottom="16dp"
+                    android:text="Species"
                     android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.506"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/nationality2" />
+                    app:layout_constraintStart_toStartOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card3"
-            android:layout_width="100dp"
-            android:layout_height="120dp"
+            android:layout_width="110dp"
+            android:layout_height="117dp"
             android:layout_marginStart="15dp"
             android:layout_marginTop="28dp"
             app:cardBackgroundColor="#C7745E"
@@ -177,10 +177,11 @@
 
                 <TextView
                     android:id="@+id/nationality3"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:text="Indonesia"
+                    android:textAlignment="center"
                     android:textColor="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.508"
@@ -191,13 +192,12 @@
                     android:id="@+id/origin3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="Origin"
+                    android:layout_marginBottom="16dp"
+                    android:text="Altitude"
                     android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.506"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/nationality3" />
+                    app:layout_constraintStart_toStartOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
@@ -234,37 +234,18 @@
             app:layout_constraintStart_toStartOf="@+id/bannerInformasiKopi"
             app:layout_constraintTop_toBottomOf="@+id/aboutCoffee" />
 
-        <TextView
-            android:id="@+id/benefit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Benefit"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/aboutCoffee"
-            app:layout_constraintTop_toBottomOf="@+id/aboutCoffeedetail" />
-
-        <TextView
-            android:id="@+id/benefitDetail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/melancarkan_darah"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@+id/benefit"
-            app:layout_constraintTop_toBottomOf="@+id/benefit" />
 
         <TextView
             android:id="@+id/price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
             android:layout_marginTop="16dp"
             android:text="Price"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/benefit"
-            app:layout_constraintTop_toBottomOf="@+id/benefitDetail" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/aboutCoffeedetail" />
 
         <TextView
             android:id="@+id/priceDetail"

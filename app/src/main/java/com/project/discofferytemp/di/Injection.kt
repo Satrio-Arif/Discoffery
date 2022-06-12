@@ -2,10 +2,7 @@ package com.project.discofferytemp.di
 
 import com.project.discofferytemp.api.ApiConfig
 import com.project.discofferytemp.helper.GoogleMaps
-import com.project.discofferytemp.repository.ArticleRepository
-import com.project.discofferytemp.repository.ClasificationRepository
-import com.project.discofferytemp.repository.HomeRepository
-import com.project.discofferytemp.repository.MapsRepository
+import com.project.discofferytemp.repository.*
 
 object Injection {
     fun provideMapRepository(): MapsRepository {
@@ -24,5 +21,8 @@ object Injection {
     fun provideHomeRepository(): HomeRepository {
         val apiService =ApiConfig.getApiArticle()
         return HomeRepository.getInstance(apiService)
+    }
+    fun provideDetailKopiRepository(): DetailKopiRepository {
+        return DetailKopiRepository.getInstance()
     }
 }

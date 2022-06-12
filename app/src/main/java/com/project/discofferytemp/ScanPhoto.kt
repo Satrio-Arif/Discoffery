@@ -55,11 +55,21 @@ class ScanPhoto : AppCompatActivity() {
             model.clasification(resize,application)
             classification()
         }
+
         binding.detailprice.setOnClickListener {
-            startActivity(Intent(this@ScanPhoto,DetailKopi::class.java))
+            val intent =Intent(this@ScanPhoto,DetailKopi::class.java)
+            intent.putExtra(DATA,0)
+            startActivity(intent)
         }
-        binding.confidenceAcehGayo.setOnClickListener {
-            startActivity(Intent(this@ScanPhoto,DetailKopi::class.java))
+        binding.detailprice2.setOnClickListener {
+            val intent =Intent(this@ScanPhoto,DetailKopi::class.java)
+            intent.putExtra(DATA,1)
+            startActivity(intent)
+        }
+        binding.detailprice3.setOnClickListener {
+            val intent =Intent(this@ScanPhoto,DetailKopi::class.java)
+            intent.putExtra(DATA,2)
+            startActivity(intent)
         }
     }
 
@@ -102,5 +112,8 @@ class ScanPhoto : AppCompatActivity() {
         intent.flags =Intent.FLAG_ACTIVITY_CLEAR_TOP
         startActivity(intent)
         finish()
+    }
+    companion object{
+        const val DATA ="data"
     }
 }
