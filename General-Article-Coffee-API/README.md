@@ -14,12 +14,12 @@ Deployment:
 2.	Next, we create a mysql database in the sql cloud using an existing service to store prepared data.
 3.	Then, in the following step, we create a dockerfile in which this docker is used. to create an image with a set of commands, instructions (arguments) to be executed sequentially and automatically
 4.	We then submit the dockerfile image, along with the newly created local API, to Google Container Registry following this command:
->Gcloud Commads
+>Gcloud Commands
 
     gcloud builds submit --tag gcr.io/discoffery-352123/discoffery-service
 ....
 5.	Our final step is to create a cloud run service and configure it with cloud sql to be able to call data from the newly created mysql database, as well as other supporting dependencies such as selecting the image from the Google Container Registry to deploy the local API to the cloud run service following this commad :
->Gcloud Commads
+>Gcloud Commands
 
     gcloud run deploy discoffery-service \
     --image gcr.io/discoffery-352123/discoffery-service \
