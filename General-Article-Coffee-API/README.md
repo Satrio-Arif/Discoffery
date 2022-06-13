@@ -17,7 +17,7 @@ Deployment:
 >Gcloud Commands
 
     gcloud builds submit --tag gcr.io/discoffery-352123/discoffery-service
-....
+
 5.	Our final step is to create a cloud run service and configure it with cloud sql to be able to call data from the newly created mysql database, as well as other supporting dependencies such as selecting the image from the Google Container Registry to deploy the local API to the cloud run service following this commad :
 >Gcloud Commands
 
@@ -29,7 +29,6 @@ Deployment:
     --region asia-southeast2 \
     --allow-unauthenticated \
     --project=discoffery-352123
- ....
  
 6.	Public API endpoints are now available for use in our application.
 
