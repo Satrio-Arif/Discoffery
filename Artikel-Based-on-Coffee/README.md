@@ -4,6 +4,8 @@
 ### General Info
 This is Backend repository for Database Article Based on Coffee for showing Article About Coffee. Using the Javascript programming language by using the Node.js libraries, ORM Sequelieze and Framework Express. For Database using cloud Sql (MySql)
 
+The implementation is carried out in several stages: implementing the SQL database into the Google Cloud Run service, JSON data, REST API, and mobile apps with Model-View-Controller (MVC) architecture. REST which is a bridge to connect incoming and outgoing data.
+
 > My Dependencies For Article Based on Coffee
 ```
 "dependencies": {
