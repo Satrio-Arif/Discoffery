@@ -2,7 +2,7 @@
 
 
 ### General Info
-This is Backend repository for Database Article Based on Coffee for showing Article About Coffee. Using the Javascript programming language by using the Node.js libraries, ORM Sequelieze and Framework Express.
+This is Backend repository for Database Article Based on Coffee for showing Article About Coffee. Using the Javascript programming language by using the Node.js libraries, ORM Sequelieze and Framework Express. For Database using cloud Sql (MySql)
 
 > My Dependencies For Article Based on Coffee
 ```
