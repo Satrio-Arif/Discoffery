@@ -1,4 +1,4 @@
-package com.project.discofferytemp
+package com.project.discofferytemp.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +8,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
+import com.project.discofferytemp.R
 import com.project.discofferytemp.databinding.ActivityProfileBinding
 
 class ProfileActivity : AppCompatActivity() {

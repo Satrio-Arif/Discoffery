@@ -8,6 +8,7 @@ import android.os.Looper
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.project.discofferytemp.activity.OnboardingActivity
 import com.project.discofferytemp.databinding.ActivitySplashScreenBinding
 
 class SplashScreen : AppCompatActivity() {

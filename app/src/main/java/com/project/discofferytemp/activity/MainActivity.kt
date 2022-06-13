@@ -1,4 +1,4 @@
-package com.project.discofferytemp
+package com.project.discofferytemp.activity
 
 import android.Manifest
 import android.content.Intent
@@ -12,6 +12,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.project.discofferytemp.databinding.ActivityMainBinding
+import com.project.discofferytemp.rotateBitmap
 import java.io.File
 
 

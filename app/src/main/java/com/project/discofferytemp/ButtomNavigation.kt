@@ -10,6 +10,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import com.project.discofferytemp.activity.CameraActivity
 import com.project.discofferytemp.databinding.ActivityButtomNavigationBinding
 import com.project.discofferytemp.fragment.Article
 import com.project.discofferytemp.fragment.Home

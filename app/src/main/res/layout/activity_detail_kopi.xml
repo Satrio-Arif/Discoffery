@@ -42,7 +42,6 @@
             android:text="@string/indonesia"
             android:textAlignment="center"
             android:textColor="@color/black"
-
             app:layout_constraintStart_toStartOf="@+id/origin4"
             app:layout_constraintTop_toBottomOf="@+id/origin5" />
 
@@ -133,27 +132,6 @@
             app:layout_constraintTop_toBottomOf="@+id/aboutCoffee" />
 
 
-        <TextView
-            android:id="@+id/price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
-            android:text="@string/price"
-            android:fontFamily="@font/poppins_medium"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/aboutCoffeedetail" />
-
-        <TextView
-            android:id="@+id/priceDetail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins"
-            android:text="@string/rp_30_000_rp_50_000"
-            android:textSize="@dimen/_14sdp"
-            app:layout_constraintStart_toStartOf="@+id/price"
-            app:layout_constraintTop_toBottomOf="@+id/price" />
-
         <Button
             android:id="@+id/btnCariKopi"
             android:layout_width="match_parent"
@@ -166,7 +144,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/priceDetail" />
+
+            android:visibility="gone"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

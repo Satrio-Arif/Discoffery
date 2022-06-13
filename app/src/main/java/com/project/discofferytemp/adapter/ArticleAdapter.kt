@@ -19,9 +19,7 @@ class ArticleAdapter(val context: Context):RecyclerView.Adapter<ArticleAdapter.A
      }
 
 
-    class ArticleHolder(var data:UtemArticleBinding):RecyclerView.ViewHolder(data.root) {
-
-    }
+    class ArticleHolder(var data:UtemArticleBinding):RecyclerView.ViewHolder(data.root)
 
     override fun onCreateViewHolder(
         parent: ViewGroup,

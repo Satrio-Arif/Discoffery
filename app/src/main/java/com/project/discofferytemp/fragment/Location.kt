@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.project.discofferytemp.MapsActivity
+import com.project.discofferytemp.activity.MapsActivity
 import com.project.discofferytemp.databinding.FragmentLocationBinding
 
 
@@ -27,7 +27,7 @@ class Location : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding?.homeFragment?.setOnClickListener {
              binding?.progressBar?.visibility =View.VISIBLE
-            startActivity(Intent(activity,MapsActivity::class.java))
+            startActivity(Intent(activity, MapsActivity::class.java))
 
         }
     }

@@ -17,13 +17,14 @@ import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
 import com.google.firebase.auth.FirebaseAuth
 import com.project.discofferytemp.*
+import com.project.discofferytemp.activity.CameraActivity
+import com.project.discofferytemp.activity.MainActivity
+import com.project.discofferytemp.activity.ProfileActivity
 import com.project.discofferytemp.adapter.HomeAdapter
 import com.project.discofferytemp.databinding.FragmentHomeBinding
 import com.project.discofferytemp.helper.Data
 import com.project.discofferytemp.model.Articles
-import com.project.discofferytemp.viewmodel.ArticleViewModel
 import com.project.discofferytemp.viewmodel.HomeViewModel
-import com.project.discofferytemp.viewmodel.ViewModelFactoryArticle
 import com.project.discofferytemp.viewmodel.ViewModelFactoryHome
 import java.io.File
 

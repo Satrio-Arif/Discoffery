@@ -3,7 +3,6 @@ package com.project.discofferytemp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.project.discofferytemp.databinding.ActivityDetailKopiBinding
 import com.project.discofferytemp.model.ArticlesDetail
@@ -20,13 +19,11 @@ class DetailKopi : AppCompatActivity() {
         setContentView(binding.root)
         val data =intent.getIntExtra(ScanPhoto.DATA,0)
         model =ViewModelProvider(this,ViewModelFactoryDetailKopi.getInstance()).get(DetailKopiViewModel::class.java)
-        model.getData()
+        model.getData(data)
         model.data.observe(this){
-            showData(it[data])
+            showData(it.data.get(0))
         }
-        binding.btnCariKopi.setOnClickListener {
-            Toast.makeText(this, "apa", Toast.LENGTH_SHORT).show()
-        }
+
     }
 
     private fun showData(param:ArticlesDetail){
@@ -34,9 +31,7 @@ class DetailKopi : AppCompatActivity() {
         binding.nationality.text =param.origin
         binding.nationality2.text =param.variety
         binding.aboutCoffeedetail.text =param.about
-        binding.    nationality3.text =param.Altitude
-        binding.priceDetail.text =param.price
-
+        binding.nationality3.text =param.altitude
     }
 
     override fun onBackPressed() {

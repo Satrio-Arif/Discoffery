@@ -1,4 +1,4 @@
-package com.project.discofferytemp
+package com.project.discofferytemp.activity
 
 import android.content.Intent
 import android.net.Uri
@@ -16,7 +16,10 @@ import androidx.camera.core.ImageCaptureException
 import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
+import com.project.discofferytemp.ScanPhoto
+import com.project.discofferytemp.createFile
 import com.project.discofferytemp.databinding.ActivityCameraBinding
+import com.project.discofferytemp.uriToFile
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 

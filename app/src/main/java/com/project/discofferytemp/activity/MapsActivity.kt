@@ -1,4 +1,4 @@
-package com.project.discofferytemp
+package com.project.discofferytemp.activity
 
 import android.Manifest
 import android.content.IntentSender
@@ -23,6 +23,7 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.project.discofferytemp.R
 import com.project.discofferytemp.adapter.MapsAdapter
 import com.project.discofferytemp.api.ApiService
 import com.project.discofferytemp.databinding.ActivityMapsBinding

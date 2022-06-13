@@ -1,4 +1,4 @@
-package com.project.discofferytemp
+package com.project.discofferytemp.activity
 
 import android.app.Activity
 import android.content.Intent
@@ -16,6 +16,8 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.project.discofferytemp.ButtomNavigation
+import com.project.discofferytemp.R
 import com.project.discofferytemp.databinding.ActivityLoginActivtyBinding
 
 class LoginActivty : AppCompatActivity() {

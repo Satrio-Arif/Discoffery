@@ -3,7 +3,6 @@ package com.project.discofferytemp.viewmodel
 import androidx.lifecycle.*
 import com.project.discofferytemp.di.Injection
 import com.project.discofferytemp.model.Articles
-import com.project.discofferytemp.model.PlaceDetail
 import com.project.discofferytemp.repository.ArticleRepository
 import kotlinx.coroutines.launch
 

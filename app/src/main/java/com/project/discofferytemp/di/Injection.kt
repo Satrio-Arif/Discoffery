@@ -23,6 +23,7 @@ object Injection {
         return HomeRepository.getInstance(apiService)
     }
     fun provideDetailKopiRepository(): DetailKopiRepository {
-        return DetailKopiRepository.getInstance()
+        val apiService =ApiConfig.getApiArticleDetail()
+        return DetailKopiRepository.getInstance(apiService)
     }
 }

@@ -1,10 +1,12 @@
-package com.project.discofferytemp
+package com.project.discofferytemp.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.viewpager2.widget.ViewPager2
+import com.project.discofferytemp.OnboardingData
+import com.project.discofferytemp.R
 import com.project.discofferytemp.adapter.OnboardingAdapter
 import com.project.discofferytemp.databinding.ActivityOnboardingBinding
 

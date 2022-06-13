@@ -17,9 +17,7 @@ class MapsAdapter(var context: Context) :RecyclerView.Adapter<MapsAdapter.MapsHo
         this.dataMap.clear()
         this.dataMap.addAll(paramData)
     }
-    class MapsHolder(var data:ItemMapsBinding):RecyclerView.ViewHolder(data.root) {
-
-    }
+    class MapsHolder(var data:ItemMapsBinding):RecyclerView.ViewHolder(data.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MapsHolder {
         val view = ItemMapsBinding.inflate(LayoutInflater.from(parent.context), parent, false)

@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.project.discofferytemp.adapter.ArticleAdapter
 import com.project.discofferytemp.databinding.ActivityDetailKopiArticleBinding
-import com.project.discofferytemp.databinding.ActivityDetailKopiBinding
 import com.project.discofferytemp.model.Articles
 
 class DetailKopiArticle : AppCompatActivity() {

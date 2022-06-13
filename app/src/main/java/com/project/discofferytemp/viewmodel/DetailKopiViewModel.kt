@@ -2,18 +2,18 @@ package com.project.discofferytemp.viewmodel
 
 import androidx.lifecycle.*
 import com.project.discofferytemp.di.Injection
-import com.project.discofferytemp.model.ArticlesDetail
+import com.project.discofferytemp.model.ArticleRespon
 import com.project.discofferytemp.repository.DetailKopiRepository
 import kotlinx.coroutines.launch
 
 class DetailKopiViewModel(private val detailKopiRepository: DetailKopiRepository) :ViewModel() {
 
-    private var _data =MutableLiveData<ArrayList<ArticlesDetail>>()
-    var data:LiveData<ArrayList<ArticlesDetail>> =_data
+    private var _data =MutableLiveData<ArticleRespon>()
+    var data:LiveData <ArticleRespon> =_data
 
-    fun getData (){
+    fun getData (param:Int){
         viewModelScope.launch {
-          _data.value = detailKopiRepository.getDetailKopi()
+          _data.value = detailKopiRepository.getDetailKopi(param)
         }
     }
 
